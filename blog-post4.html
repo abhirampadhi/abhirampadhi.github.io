@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Introduction to Entity Framework Core</title>
+    <link rel="stylesheet" href="blog.css" />
+</head>
+
+<body>
+    <!-- Blog Post -->
+    <section id="blog-post">
+        <div class="container">
+            <h1 class="title">Introduction to Entity Framework Core</h1>
+            <p class="blog-date">September 22, 2024</p>
+
+            <div class="blog-content">
+                <p>Entity Framework Core (EF Core) is a powerful Object-Relational Mapper (ORM) for .NET applications.
+                    It simplifies data access by allowing developers to work with databases using .NET objects rather
+                    than SQL queries. In this article, we’ll provide an introduction to EF Core, its features, and how
+                    to get started with it in your .NET applications.</p>
+
+                <h2>What is Entity Framework Core?</h2>
+                <p>EF Core is a lightweight and extensible version of Entity Framework, designed to work with .NET Core
+                    and .NET Framework applications. It enables developers to interact with databases using LINQ queries
+                    and provides features such as automatic migrations, change tracking, and lazy loading.</p>
+
+                <h2>Key Features of EF Core</h2>
+                <ul>
+                    <li><strong>Code-First Approach:</strong> Allows developers to define their database schema using C#
+                        classes and automatically generate database tables based on these classes.</li>
+                    <li><strong>LINQ Queries:</strong> Enables querying and manipulating data using LINQ, providing a
+                        more intuitive and type-safe way to interact with the database.</li>
+                    <li><strong>Automatic Migrations:</strong> Automatically updates the database schema based on
+                        changes to the entity classes.</li>
+                    <li><strong>Change Tracking:</strong> Tracks changes to entities and handles updates to the database
+                        efficiently.</li>
+                </ul>
+
+                <h2>Getting Started with EF Core</h2>
+                <h3>Step 1: Install EF Core Packages</h3>
+                <pre><code>
+dotnet add package Microsoft.EntityFrameworkCore
+dotnet add package Microsoft.EntityFrameworkCore.SqlServer
+dotnet add package Microsoft.EntityFrameworkCore.Tools
+                </code></pre>
+
+                <p>Install the necessary EF Core packages using the .NET CLI to get started with EF Core in your
+                    project.</p>
+
+                <h3>Step 2: Define Your Data Model</h3>
+                <pre><code>
+public class Blog
+{
+    public int BlogId { get; set; }
+    public string Name { get; set; }
+    public List<Post> Posts { get; set; }
+}
+
+public class Post
+{
+    public int PostId { get; set; }
+    public string Title { get; set; }
+    public string Content { get; set; }
+    public int BlogId { get; set; }
+    public Blog Blog { get; set; }
+}
+                </code></pre>
+
+                <p>Define your entity classes, which represent the data model for your application. In this example, we
+                    have `Blog` and `Post` entities.</p>
+
+                <h3>Step 3: Configure Your DbContext</h3>
+                <pre><code>
+public class BloggingContext : DbContext
+{
+    public DbSet<Blog> Blogs { get; set; }
+    public DbSet<Post> Posts { get; set; }
+
+    protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
+    {
+        optionsBuilder.UseSqlServer("YourConnectionString");
+    }
+}
+                </code></pre>
+
+                <p>Create a `DbContext` class to manage the database connection and entity sets.</p>
+
+                <h3>Step 4: Perform Migrations</h3>
+                <pre><code>
+dotnet ef migrations add InitialCreate
+dotnet ef database update
+                </code></pre>
+
+                <p>Use the Entity Framework Core CLI to add migrations and update the database schema.</p>
+
+                <h2>Conclusion</h2>
+                <p>Entity Framework Core is a versatile ORM that simplifies database interactions in .NET applications.
+                    By leveraging EF Core, developers can write more maintainable and efficient data access code.
+                    Whether you’re building a new application or working on an existing one, EF Core is a valuable tool
+                    for managing data in .NET applications.</p>
+            </div>
+        </div>
+    </section>
+
+   <!-- Footer -->
+   <a href="blog.html" class="btn btn-color-1">Back to Blog</a>
+
+    <!-- JavaScript -->
+    <script src="script.js"></script>
+</body>
+
+</html>

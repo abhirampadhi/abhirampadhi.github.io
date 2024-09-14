@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Building a REST API with ASP.NET Core</title>
+    <link rel="stylesheet" href="blog.css" />
+</head>
+
+<body>
+    <!-- Blog Post -->
+    <section id="blog-post">
+        <div class="container">
+            <h1 class="title">Building a REST API with ASP.NET Core</h1>
+            <p class="blog-date">September 24, 2024</p>
+
+            <div class="blog-content">
+                <p>Creating a REST API with ASP.NET Core is a common task in modern web development. ASP.NET Core
+                    provides a robust framework for building APIs that are scalable, maintainable, and easy to test.
+                    This article will guide you through the process of building a REST API from scratch using ASP.NET
+                    Core.</p>
+
+                <h2>Setting Up the Project</h2>
+                <p>Start by creating a new ASP.NET Core Web API project using the .NET CLI:</p>
+                <pre><code>
+dotnet new webapi -n MyApi
+cd MyApi
+                </code></pre>
+
+                <h2>Defining Your Data Model</h2>
+                <p>Define the data models for your API. For example, if you are building a task management API, you
+                    might have a `Task` model:</p>
+                <pre><code>
+public class Task
+{
+    public int Id { get; set; }
+    public string Title { get; set; }
+    public bool IsCompleted { get; set; }
+}
+                </code></pre>
+
+                <h2>Creating a Data Context</h2>
+                <p>Set up the `DbContext` for interacting with the database:</p>
+                <pre><code>
+public class AppDbContext : DbContext
+{
+    public DbSet<Task> Tasks { get; set; }
+
+    public AppDbContext(DbContextOptions<AppDbContext> options) : base(options)
+    {
+    }
+}
+                </code></pre>
+
+                <h2>Building the Controller</h2>
+                <p>Create a controller to handle HTTP requests:</p>
+                <pre><code>
+[ApiController]
+[Route("api/[controller]")]
+public class TasksController : ControllerBase
+{
+    private readonly AppDbContext _context;
+
+    public TasksController(AppDbContext context)
+    {
+        _context = context;
+    }
+
+    [HttpGet]
+    public async Task<ActionResult<IEnumerable<Task>>> GetTasks()
+    {
+        return await _context.Tasks.ToListAsync();
+    }
+
+    [HttpGet("{id}")]
+    public async Task<ActionResult<Task>> GetTask(int id)
+    {
+        var task = await _context.Tasks.FindAsync(id);
+        if (task == null)
+        {
+            return NotFound();
+        }
+        return task;
+    }
+
+    [HttpPost]
+    public async Task<ActionResult<Task>> PostTask(Task task)
+    {
+        _context.Tasks.Add(task);
+        await _context.SaveChangesAsync();
+        return CreatedAtAction(nameof(GetTask), new { id = task.Id }, task);
+    }
+}
+                </code></pre>
+
+                <h2>Running the Application</h2>
+                <p>Run the application using:</p>
+                <pre><code>
+dotnet run
+                </code></pre>
+
+                <p>Test your API using tools like Postman or curl to ensure it is working as expected.</p>
+
+                <h2>Conclusion</h2>
+                <p>Building a REST API with ASP.NET Core is a straightforward process that involves setting up a
+                    project, defining models, configuring data access, and creating controllers. With ASP.NET Core, you
+                    can build high-performance APIs that meet the needs of modern web applications.</p>
+            </div>
+        </div>
+    </section>
+
+     <!-- Footer -->
+     <a href="blog.html" class="btn btn-color-1">Back to Blog</a>
+
+    <!-- JavaScript -->
+    <script src="script.js"></script>
+</body>
+
+</html>

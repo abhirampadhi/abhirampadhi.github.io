@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Understanding Dependency Injection in .NET</title>
+    <link rel="stylesheet" href="blog.css" />
+</head>
+
+<body>
+    <!-- Blog Post -->
+    <section id="blog-post">
+        <div class="container">
+            <h1 class="title">Understanding Dependency Injection in .NET</h1>
+            <p class="blog-date">September 20, 2024</p>
+
+            <div class="blog-content">
+                <p>Dependency Injection (DI) is a fundamental concept in software development that promotes loose
+                    coupling between components, enhances testability, and simplifies code management. In .NET, DI is a
+                    core feature of the framework, especially in ASP.NET Core applications. This article explores the
+                    principles of Dependency Injection in .NET, its benefits, and practical examples of how to use it
+                    effectively.</p>
+
+                <h2>What is Dependency Injection?</h2>
+                <p>Dependency Injection is a design pattern where an object receives other objects that it depends on,
+                    rather than creating them internally. This approach promotes the principle of Inversion of Control
+                    (IoC), allowing objects to be injected into classes rather than hard-coding dependencies.</p>
+
+                <h2>Benefits of Dependency Injection</h2>
+                <ul>
+                    <li><strong>Loose Coupling:</strong> Reduces dependencies between classes, making them more modular
+                        and easier to maintain.</li>
+                    <li><strong>Enhanced Testability:</strong> Facilitates unit testing by allowing mock dependencies to
+                        be injected into classes.</li>
+                    <li><strong>Improved Code Management:</strong> Simplifies the management of object lifetimes and
+                        dependencies.</li>
+                </ul>
+
+                <h2>Dependency Injection in .NET Core</h2>
+                <p>In .NET Core, DI is built into the framework, making it easy to configure and use. The following
+                    steps illustrate how to set up DI in an ASP.NET Core application:</p>
+
+                <h3>Step 1: Configure Services</h3>
+                <pre><code>
+public class Startup
+{
+    public void ConfigureServices(IServiceCollection services)
+    {
+        services.AddControllers();
+        services.AddTransient<IService, ServiceImplementation>();
+    }
+}
+                </code></pre>
+
+                <p>In the `ConfigureServices` method, you register services with the dependency injection container. You
+                    can specify the service lifetime as `Transient`, `Scoped`, or `Singleton` based on your needs.</p>
+
+                <h3>Step 2: Inject Dependencies into Controllers</h3>
+                <pre><code>
+public class MyController : ControllerBase
+{
+    private readonly IService _service;
+
+    public MyController(IService service)
+    {
+        _service = service;
+    }
+}
+                </code></pre>
+
+                <p>In your controller, you can inject dependencies through the constructor. This allows the controller
+                    to use the injected service without creating an instance of it directly.</p>
+
+                <h2>Conclusion</h2>
+                <p>Dependency Injection is a powerful pattern that enhances the flexibility and maintainability of .NET
+                    applications. By leveraging DI in .NET Core, developers can build more modular, testable, and
+                    manageable codebases. Embracing DI principles is essential for modern .NET development and
+                    contributes to writing clean, scalable, and efficient code.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <a href="blog.html" class="btn btn-color-1">Back to Blog</a>
+
+    <!-- JavaScript -->
+    <script src="script.js"></script>
+</body>
+
+</html>

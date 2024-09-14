@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Using Angular Directives Effectively</title>
+    <link rel="stylesheet" href="blog.css" />
+</head>
+
+<body>
+    <!-- Blog Post -->
+    <section id="blog-post">
+        <div class="container">
+            <h1 class="title">Using Angular Directives Effectively</h1>
+            <p class="blog-date">September 28, 2024</p>
+
+            <div class="blog-content">
+                <p>Angular directives are a powerful feature that allows you to extend HTML's functionality and create
+                    custom behavior in your applications. Directives can be used to manipulate the DOM, bind data, and
+                    enhance user interactions. This article explores the different types of Angular directives and
+                    provides guidance on how to use them effectively in your projects.</p>
+
+                <h2>What Are Angular Directives?</h2>
+                <p>Directives are classes that add behavior to elements in your Angular applications. They come in three
+                    main types:</p>
+                <ul>
+                    <li><strong>Component Directives:</strong> These are directives with a template. Components are the
+                        most common type of directive used in Angular applications.</li>
+                    <li><strong>Structural Directives:</strong> These directives change the DOM layout by adding or
+                        removing elements. Examples include `*ngIf` and `*ngFor`.</li>
+                    <li><strong>Attribute Directives:</strong> These directives change the appearance or behavior of an
+                        element. Examples include `ngClass` and `ngStyle`.</li>
+                </ul>
+
+                <h2>Creating a Custom Directive</h2>
+                <p>To create a custom directive, use the Angular CLI:</p>
+                <pre><code>
+ng generate directive highlight
+                </code></pre>
+
+                <p>Define your custom directive to change the background color of an element:</p>
+                <pre><code>
+import { Directive, ElementRef, Renderer2, HostListener } from '@angular/core';
+
+@Directive({
+    selector: '[appHighlight]'
+})
+export class HighlightDirective {
+    constructor(private el: ElementRef, private renderer: Renderer2) { }
+
+    @HostListener('mouseenter') onMouseEnter() {
+        this.renderer.setStyle(this.el.nativeElement, 'backgroundColor', 'yellow');
+    }
+
+    @HostListener('mouseleave') onMouseLeave() {
+        this.renderer.removeStyle(this.el.nativeElement, 'backgroundColor');
+    }
+}
+                </code></pre>
+
+                <p>Use the directive in your template:</p>
+                <pre><code>
+<p appHighlight>Hover over me to see the highlight effect!</p>
+                </code></pre>
+
+                <h2>Best Practices for Using Directives</h2>
+                <ul>
+                    <li><strong>Keep Directives Focused:</strong> Ensure your directives have a single responsibility
+                        and do not try to handle multiple tasks.</li>
+                    <li><strong>Use Attribute Directives for Small Changes:</strong> For minor DOM manipulations, use
+                        attribute directives to keep your code clean and maintainable.</li>
+                    <li><strong>Document Your Directives:</strong> Provide clear documentation for your directives to
+                        make them easier to understand and use by other developers.</li>
+                </ul>
+
+                <h2>Conclusion</h2>
+                <p>Angular directives are a versatile tool for enhancing and customizing the behavior of your
+                    applications. By understanding the different types of directives and following best practices, you
+                    can create powerful and reusable components that improve the functionality and user experience of
+                    your Angular applications.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <a href="blog.html" class="btn btn-color-1">Back to Blog</a>
+
+    <!-- JavaScript -->
+    <script src="script.js"></script>
+</body>
+
+</html>
