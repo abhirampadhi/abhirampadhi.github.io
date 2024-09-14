@@ -351,42 +351,90 @@ article .icon {
 
 /* CONTACT */
 
+/* CONTACT SECTION */
 #contact {
-  display: flex;
-  justify-content: center;
-  flex-direction: column;
-  padding: 4rem 2rem;
-  margin-top: 4rem;
-  margin-bottom: 4rem;
-  background-color: #f9f9f9;
-  border-radius: 1rem;
+  padding: 20px;
+  text-align: center;
 }
 
-.contact-info-upper-container {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 1.5rem;
-  border: 1px solid rgb(163, 163, 163);
-  border-radius: 1rem;
-  padding: 2rem;
-  background-color: white;
+.section__text__p1 {
+  font-size: 16px;
+  color: #333;
+  margin-bottom: 5px;
+}
+
+.title {
+  font-size: 24px;
+  margin: 10px 0;
+  color: #333;
 }
 
 .contact-info-container {
   display: flex;
+  flex-direction: column;
   align-items: center;
-  gap: 1rem;
+  gap: 20px;
+  /* Space between contact items */
 }
 
-.contact-info-container p {
-  font-size: 1.2rem;
+.contact-info-item {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  /* Space between icon and text */
 }
 
-.contact-icon {
-  height: 2.5rem;
-  width: 2.5rem;
+.contact-info-item img {
+  width: 24px;
+  /* Icon size */
+  height: 24px;
+  /* Icon size */
 }
+
+.contact-info-item a {
+  color: #007bff;
+  /* Link color */
+  text-decoration: none;
+  font-size: 16px;
+}
+
+.contact-info-item a:hover {
+  text-decoration: underline;
+}
+
+/* Responsive Styles */
+@media (max-width: 768px) {
+  .contact-info-container {
+    gap: 15px;
+    /* Reduced gap on smaller screens */
+  }
+}
+
+@media (max-width: 480px) {
+  .section__text__p1 {
+    font-size: 14px;
+    /* Adjust font size for smaller screens */
+  }
+
+  .title {
+    font-size: 20px;
+    /* Adjust font size for smaller screens */
+  }
+
+  .contact-info-item {
+    font-size: 14px;
+    /* Adjust font size for smaller screens */
+  }
+
+  .contact-info-item img {
+    width: 20px;
+    /* Smaller icon size */
+    height: 20px;
+    /* Smaller icon size */
+  }
+}
+
+
 
 /* FOOTER SECTION */
 
