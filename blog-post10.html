@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>.NET Coding Standards: Best Practices for Clean and Maintainable Code</title>
+    <link rel="stylesheet" href="blog.css" />
+</head>
+
+<body>
+    <!-- Blog Post -->
+    <section id="blog-post">
+        <div class="container">
+            <h1 class="title">.NET Coding Standards: Best Practices for Clean and Maintainable Code</h1>
+            <p class="blog-date">September 28, 2024</p>
+
+            <div class="blog-content">
+                <p>Following coding standards in .NET development ensures code consistency, readability, and maintainability, making collaboration smoother for development teams. This article covers the essential .NET coding standards, ranging from naming conventions to advanced best practices that should be followed when writing .NET applications.</p>
+
+                <h2>1. Naming Conventions</h2>
+                <p>Adhering to naming conventions is crucial for writing code that is easy to read and understand. The following guidelines should be followed in .NET projects:</p>
+
+                <h3>1.1. Classes and Methods</h3>
+                <ul>
+                    <li><strong>Classes:</strong> Class names should follow PascalCase. They should be nouns that represent what the class does. Example: <code>CustomerRepository</code>, <code>InvoiceProcessor</code>.</li>
+                    <li><strong>Methods:</strong> Method names should also use PascalCase and be descriptive verbs or verb phrases that explain the action. Example: <code>GetCustomerDetails</code>, <code>CalculateInvoiceTotal</code>.</li>
+                </ul>
+
+                <h3>1.2. Variables and Fields</h3>
+                <ul>
+                    <li><strong>Local Variables and Fields:</strong> Use camelCase for local variables and fields. Keep the names meaningful and concise. Example: <code>customerList</code>, <code>invoiceAmount</code>.</li>
+                    <li><strong>Constants:</strong> Use PascalCase for constants and prefix them with <code>const</code>. Example: <code>const MaxItemsPerPage</code>.</li>
+                </ul>
+
+                <h3>1.3. Interfaces and Enums</h3>
+                <ul>
+                    <li><strong>Interfaces:</strong> Interfaces should be prefixed with an "I" and follow PascalCase. Example: <code>IRepository</code>, <code>ILogger</code>.</li>
+                    <li><strong>Enums:</strong> Enum names should be PascalCase, and individual enum members should also use PascalCase. Example: <code>OrderStatus.Pending</code>.</li>
+                </ul>
+
+                <h2>2. Formatting Guidelines</h2>
+                <p>Consistent formatting makes code easier to read and maintain. The following formatting guidelines should be followed in all .NET projects:</p>
+
+                <h3>2.1. Indentation</h3>
+                <ul>
+                    <li>Use 4 spaces per indentation level. Do not use tabs, as they can cause inconsistencies across editors.</li>
+                </ul>
+
+                <h3>2.2. Braces</h3>
+                <ul>
+                    <li>Use <strong>Allman style</strong> for braces (also known as "open braces on a new line"). Example:</li>
+                    <pre><code>
+public class MyClass
+{
+    public void MyMethod()
+    {
+        if (condition)
+        {
+            // logic
+        }
+        else
+        {
+            // logic
+        }
+    }
+}
+                    </code></pre>
+                </ul>
+
+                <h2>3. Commenting and Documentation</h2>
+                <p>Comments and documentation play a vital role in making code understandable for others (and for future you). Here are some best practices for adding comments:</p>
+
+                <h3>3.1. XML Documentation</h3>
+                <ul>
+                    <li>Use XML comments to document public classes and methods. These comments will be picked up by IntelliSense and can be used to generate API documentation. Example:</li>
+                    <pre><code>
+/// <summary>
+/// This method retrieves customer details by ID.
+/// </summary>
+/// <param name="customerId">The ID of the customer.</param>
+/// <returns>Customer details.</returns>
+public Customer GetCustomerById(int customerId)
+{
+    // method logic
+}
+                    </code></pre>
+                </ul>
+
+                <h3>3.2. In-line Comments</h3>
+                <ul>
+                    <li>Use in-line comments sparingly to explain complex logic. Avoid over-commenting as it can clutter the code and reduce readability. Always ensure that comments add value.</li>
+                </ul>
+
+                <h2>4. Exception Handling</h2>
+                <p>Proper exception handling ensures your application can gracefully handle errors. Here are some best practices:</p>
+
+                <ul>
+                    <li>Always catch specific exceptions instead of using a general <code>catch(Exception ex)</code>. This ensures you only handle what you expect and avoid hiding potential bugs.</li>
+                    <li>Use custom exception types when necessary to provide more clarity about the source of the error.</li>
+                    <li>Always log exceptions with enough context, using logging frameworks like Serilog, NLog, or log4net, for better troubleshooting.</li>
+                    <li>Use <code>try-finally</code> or <code>using</code> statements to clean up resources like file handles, database connections, etc., even if an error occurs.</li>
+                </ul>
+
+                <h2>5. SOLID Principles</h2>
+                <p>Following the SOLID principles in .NET development is key to writing maintainable, scalable, and flexible code.</p>
+
+                <h3>5.1. Single Responsibility Principle (SRP)</h3>
+                <ul>
+                    <li>Each class should have one, and only one, reason to change. Keep classes focused on a single task or functionality.</li>
+                </ul>
+
+                <h3>5.2. Open/Closed Principle (OCP)</h3>
+                <ul>
+                    <li>Classes should be open for extension but closed for modification. Use inheritance or composition to extend functionality without altering existing code.</li>
+                </ul>
+
+                <h3>5.3. Liskov Substitution Principle (LSP)</h3>
+                <ul>
+                    <li>Subclasses should be substitutable for their base classes. Ensure that derived classes preserve the behavior expected from the base class.</li>
+                </ul>
+
+                <h3>5.4. Interface Segregation Principle (ISP)</h3>
+                <ul>
+                    <li>Clients should not be forced to depend on interfaces they do not use. Create small, focused interfaces instead of large, monolithic ones.</li>
+                </ul>
+
+                <h3>5.5. Dependency Inversion Principle (DIP)</h3>
+                <ul>
+                    <li>High-level modules should not depend on low-level modules. Both should depend on abstractions (interfaces), which makes the code more flexible and testable.</li>
+                </ul>
+
+                <h2>6. Unit Testing</h2>
+                <p>Unit testing is essential for ensuring code quality. The following guidelines will help create robust and effective unit tests:</p>
+
+                <ul>
+                    <li>Follow the AAA (Arrange, Act, Assert) pattern for test structure. This pattern makes it easier to understand the test's intent.</li>
+                    <li>Each test should cover only one functionality or behavior.</li>
+                    <li>Ensure tests are independent of each other. They should not rely on the result of other tests to pass.</li>
+                    <li>Use mocking frameworks such as Moq to isolate the code being tested from its dependencies.</li>
+                    <li>Tests should be run automatically as part of a continuous integration (CI) pipeline to catch issues early in the development process.</li>
+                </ul>
+
+                <h2>7. Performance Optimization</h2>
+                <p>Optimizing performance in .NET applications is crucial for scalability. Here are some tips for writing performant code:</p>
+
+                <ul>
+                    <li>Avoid using unnecessary <code>LINQ</code> queries in performance-critical sections of code, as they can introduce overhead. Opt for straightforward loops where necessary.</li>
+                    <li>Use asynchronous programming (async/await) for I/O-bound operations to keep your application responsive.</li>
+                    <li>Minimize allocations and avoid using large object allocations unnecessarily.</li>
+                    <li>Profile your code using tools like the Visual Studio Profiler or dotTrace to identify bottlenecks.</li>
+                </ul>
+
+                <h2>Conclusion</h2>
+                <p>Adhering to coding standards in .NET is essential for creating high-quality, maintainable, and scalable applications. By following the naming conventions, formatting guidelines, SOLID principles, and performance optimization techniques outlined here, developers can ensure that their .NET codebase remains clean, consistent, and easy to work with over time.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <a href="blog.html" class="btn btn-color-1">Back to Blog</a>
+
+    <!-- JavaScript -->
+    <script src="script.js"></script>
+</body>
+
+</html>
