@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Which Middleware Implementation is Your Favorite?</title>
+    <link rel="stylesheet" href="blog.css" />
+</head>
+
+<body>
+    <!-- Blog Post -->
+    <section id="blog-post">
+        <div class="container">
+            <h1 class="title">Which Middleware Implementation is Your Favorite?</h1>
+            <p class="blog-date">October 9, 2024</p>
+
+            <div class="blog-content">
+                <p>Middleware plays a crucial role in handling HTTP requests and responses in an application pipeline, offering various ways to process incoming requests before they reach the application logic. In .NET, there are different ways to implement middleware, each with its own pros and cons. This article will explore the different types of middleware implementations and discuss their use cases.</p>
+
+                <h2>1. Delegate-based Middleware</h2>
+                <p>The delegate-based approach is ideal for simple scenarios where you don’t need much structure. In this implementation, middleware is defined directly within a lambda expression or a delegate method, which provides an easy and lightweight solution for adding custom logic.</p>
+
+                <h3>Example Code</h3>
+                <pre><code>
+public void Configure(IApplicationBuilder app)
+{
+    // Simple delegate-based middleware
+    app.Use(async (context, next) =>
+    {
+        // Pre-processing logic
+        Console.WriteLine("Incoming request: " + context.Request.Path);
+
+        await next.Invoke(); // Call the next middleware in the pipeline
+
+        // Post-processing logic
+        Console.WriteLine("Outgoing response: " + context.Response.StatusCode);
+    });
+}
+                </code></pre>
+
+                <p>This approach is great when you need to inject small pieces of functionality, like logging or handling a simple header.</p>
+
+                <h2>2. Convention-based Middleware</h2>
+                <p>Convention-based middleware uses an <code>Invoke</code> or <code>InvokeAsync</code> method in a class to process requests. This implementation is suitable when your middleware requires more organization, and you need to manage dependencies.</p>
+
+                <h3>Example Code</h3>
+                <pre><code>
+public class CustomMiddleware
+{
+    private readonly RequestDelegate _next;
+
+    public CustomMiddleware(RequestDelegate next)
+    {
+        _next = next;
+    }
+
+    public async Task InvokeAsync(HttpContext context)
+    {
+        // Pre-processing logic
+        Console.WriteLine("Handling request.");
+
+        await _next(context);
+
+        // Post-processing logic
+        Console.WriteLine("Handling response.");
+    }
+}
+
+public void Configure(IApplicationBuilder app)
+{
+    app.UseMiddleware<CustomMiddleware>();
+}
+                </code></pre>
+
+                <p>This pattern helps to create clean and modular middleware. You can easily inject services into the middleware’s constructor, enabling more complex logic while keeping the code organized.</p>
+
+                <h2>3. Factory-based Middleware</h2>
+                <p>Factory-based middleware, implemented through the <code>IMiddleware</code> interface, provides even more control over middleware instances. It is particularly useful when you want middleware to be resolved through dependency injection and registered as a service.</p>
+
+                <h3>Example Code</h3>
+                <pre><code>
+public class FactoryMiddleware : IMiddleware
+{
+    public async Task InvokeAsync(HttpContext context, RequestDelegate next)
+    {
+        // Pre-processing logic
+        Console.WriteLine("Factory Middleware handling request.");
+
+        await next(context);
+
+        // Post-processing logic
+        Console.WriteLine("Factory Middleware handling response.");
+    }
+}
+
+// Register the middleware in DI container
+public void ConfigureServices(IServiceCollection services)
+{
+    services.AddTransient<FactoryMiddleware>();
+}
+
+// Use the factory-based middleware in the pipeline
+public void Configure(IApplicationBuilder app)
+{
+    app.UseMiddleware<FactoryMiddleware>();
+}
+                </code></pre>
+
+                <p>The advantage of this approach is that middleware instances are resolved at runtime through dependency injection. This means that middleware dependencies can be easily injected into the constructor, which is ideal for more complex scenarios where the middleware relies on services that must be resolved at runtime.</p>
+
+                <h2>Which One to Choose?</h2>
+                <p>Each middleware implementation has its use case:</p>
+                <ul>
+                    <li><strong>Delegate-based Middleware:</strong> Perfect for simple, one-off middleware logic. Great when you don't need any external dependencies and want a lightweight solution.</li>
+                    <li><strong>Convention-based Middleware:</strong> Best when the middleware logic is more complex and needs to be reusable. Allows easy injection of dependencies through the constructor.</li>
+                    <li><strong>Factory-based Middleware:</strong> The preferred choice when you want middleware to be fully managed by the dependency injection container, giving you full control over how middleware is created and injected with services.</li>
+                </ul>
+
+                <h2>Conclusion</h2>
+                <p>Choosing the right middleware implementation depends on the complexity of the logic you need to handle. For simple tasks, delegate-based middleware may be the easiest and fastest to implement. Convention-based middleware is a great middle ground, offering more structure and the ability to inject dependencies. Factory-based middleware provides full control over middleware instantiation and dependency management, making it the best choice for complex scenarios.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <a href="blog.html" class="btn btn-color-1">Back to Blog</a>
+
+    <!-- JavaScript -->
+    <script src="script.js"></script>
+</body>
+
+</html>
