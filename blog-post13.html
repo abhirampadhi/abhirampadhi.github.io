@@ -34,12 +34,14 @@ Here is a blog post on **Entity Framework In-Memory Provider** following the giv
                 <h2>2. Setting Up the In-Memory Provider</h2>
                 <p>To use the In-Memory Provider, you need to add the
                     <code>Microsoft.EntityFrameworkCore.InMemory</code> package to your project. You can do this using
-                    the following command:</p>
+                    the following command:
+                </p>
                 <pre><code>dotnet add package Microsoft.EntityFrameworkCore.InMemory</code></pre>
 
                 <h2>3. Configuring the DbContext</h2>
                 <p>To configure your DbContext to use the In-Memory Provider, you need to override the
-                    <code>OnConfiguring</code> method or configure it in a test setup.</p>
+                    <code>OnConfiguring</code> method or configure it in a test setup.
+                </p>
 
                 <h3>Example Code</h3>
                 <pre><code>
@@ -147,4 +149,3 @@ public class ProductServiceTests
 </body>
 
 </html>
-```
