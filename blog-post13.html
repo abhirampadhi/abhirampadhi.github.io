@@ -1,0 +1,150 @@
+Here is a blog post on **Entity Framework In-Memory Provider** following the given format:
+
+```html
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Using Entity Framework In-Memory Provider for Unit Testing</title>
+    <link rel="stylesheet" href="blog.css" />
+</head>
+
+<body>
+    <!-- Blog Post -->
+    <section id="blog-post">
+        <div class="container">
+            <h1 class="title">Using Entity Framework In-Memory Provider for Unit Testing</h1>
+            <p class="blog-date">November 15, 2024</p>
+
+            <div class="blog-content">
+                <p>Unit testing is a crucial part of the software development process, ensuring that your code behaves
+                    as expected. When working with databases in .NET applications using Entity Framework, testing
+                    becomes challenging due to dependencies on the actual database. The **In-Memory Provider** in Entity
+                    Framework solves this problem by simulating a database in memory. This blog explains how to set up
+                    and use the In-Memory Provider for unit testing with examples.</p>
+
+                <h2>1. What is Entity Framework In-Memory Provider?</h2>
+                <p>The In-Memory Provider is an Entity Framework Core database provider that stores data in memory
+                    instead of using a physical database. It is ideal for testing purposes as it eliminates the overhead
+                    of database configuration and maintenance.</p>
+
+                <h2>2. Setting Up the In-Memory Provider</h2>
+                <p>To use the In-Memory Provider, you need to add the
+                    <code>Microsoft.EntityFrameworkCore.InMemory</code> package to your project. You can do this using
+                    the following command:</p>
+                <pre><code>dotnet add package Microsoft.EntityFrameworkCore.InMemory</code></pre>
+
+                <h2>3. Configuring the DbContext</h2>
+                <p>To configure your DbContext to use the In-Memory Provider, you need to override the
+                    <code>OnConfiguring</code> method or configure it in a test setup.</p>
+
+                <h3>Example Code</h3>
+                <pre><code>
+using Microsoft.EntityFrameworkCore;
+
+public class AppDbContext : DbContext
+{
+    public DbSet<Product> Products { get; set; }
+
+    public AppDbContext(DbContextOptions<AppDbContext> options) : base(options) { }
+}
+
+public class Product
+{
+    public int Id { get; set; }
+    public string Name { get; set; }
+    public decimal Price { get; set; }
+}
+                </code></pre>
+
+                <h2>4. Writing Unit Tests with In-Memory Provider</h2>
+                <p>Here is an example of how to write unit tests using the In-Memory Provider:</p>
+
+                <h3>Example Code</h3>
+                <pre><code>
+using Microsoft.EntityFrameworkCore;
+using System.Linq;
+using Xunit;
+
+public class ProductServiceTests
+{
+    private AppDbContext GetInMemoryDbContext()
+    {
+        var options = new DbContextOptionsBuilder<AppDbContext>()
+            .UseInMemoryDatabase(databaseName: "TestDatabase")
+            .Options;
+
+        return new AppDbContext(options);
+    }
+
+    [Fact]
+    public void AddProduct_ShouldAddProductToDatabase()
+    {
+        // Arrange
+        var context = GetInMemoryDbContext();
+        var product = new Product { Name = "Laptop", Price = 1000M };
+
+        // Act
+        context.Products.Add(product);
+        context.SaveChanges();
+
+        // Assert
+        Assert.Equal(1, context.Products.Count());
+        Assert.Equal("Laptop", context.Products.First().Name);
+    }
+
+    [Fact]
+    public void GetAllProducts_ShouldReturnAllProducts()
+    {
+        // Arrange
+        var context = GetInMemoryDbContext();
+        context.Products.Add(new Product { Name = "Laptop", Price = 1000M });
+        context.Products.Add(new Product { Name = "Phone", Price = 500M });
+        context.SaveChanges();
+
+        // Act
+        var products = context.Products.ToList();
+
+        // Assert
+        Assert.Equal(2, products.Count);
+    }
+}
+                </code></pre>
+
+                <h2>5. Advantages of Using In-Memory Provider</h2>
+                <ul>
+                    <li><strong>Fast and Lightweight:</strong> No need to set up or manage a physical database.</li>
+                    <li><strong>Isolated Testing:</strong> Each test can run with a clean state using a new database
+                        instance.</li>
+                    <li><strong>Easy to Use:</strong> Seamless integration with Entity Framework Core.</li>
+                </ul>
+
+                <h2>6. Limitations</h2>
+                <p>While the In-Memory Provider is excellent for unit testing, it has some limitations:</p>
+                <ul>
+                    <li>Does not replicate the behavior of a relational database (e.g., SQL constraints).</li>
+                    <li>Should not be used for integration testing or production scenarios.</li>
+                </ul>
+
+                <h2>Conclusion</h2>
+                <p>The Entity Framework In-Memory Provider is a powerful tool for simplifying unit tests by eliminating
+                    database dependencies. While it may not replicate every feature of a relational database, it is
+                    perfect for testing business logic and ensuring your application behaves as expected. Incorporating
+                    the In-Memory Provider into your test suite can significantly speed up development and testing
+                    cycles, ensuring a more reliable and maintainable codebase.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <a href="blog.html" class="btn btn-color-1">Back to Blog</a>
+
+    <!-- JavaScript -->
+    <script src="script.js"></script>
+</body>
+
+</html>
+```
