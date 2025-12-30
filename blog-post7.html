@@ -10,11 +10,21 @@
 </head>
 
 <body>
+    <!-- Navigation -->
+    <nav>
+        <a href="index.html" class="logo">Abhiram Padhi</a>
+    </nav>
+
     <!-- Blog Post -->
     <section id="blog-post">
         <div class="container">
-            <h1 class="title">Using Angular Directives Effectively</h1>
-            <p class="blog-date">September 28, 2024</p>
+            <div class="blog-post-header">
+                <h1 class="blog-post-title">Using Angular Directives Effectively</h1>
+                <div class="blog-post-meta">
+                    <span class="blog-post-date">September 28, 2024</span>
+                    <span class="blog-post-author">Abhiram Padhi</span>
+                </div>
+            </div>
 
             <div class="blog-content">
                 <p>Angular directives are a powerful feature that allows you to extend HTML's functionality and create
@@ -85,7 +95,9 @@ export class HighlightDirective {
     </section>
 
     <!-- Footer -->
-    <a href="blog.html" class="btn btn-color-1">Back to Blog</a>
+    <div class="container">
+        <a href="blog.html" class="back-btn">Back to Blog</a>
+    </div>
 
     <!-- JavaScript -->
     <script src="script.js"></script>
