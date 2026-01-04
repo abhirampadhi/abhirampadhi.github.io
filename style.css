@@ -1,5 +1,3 @@
-
-
 @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap");
 
 :root {
@@ -185,39 +183,68 @@ a:hover::after {
 
 section {
   padding-top: 4vh;
-  margin: 0 10rem;
+  margin: 0 auto;
+  padding-left: 2rem;
+  padding-right: 2rem;
+  max-width: 1400px;
   box-sizing: border-box;
   min-height: fit-content;
+  width: 100%;
 }
 
 /* PROFILE SECTION */
 
 #profile {
   display: flex;
+  flex-direction: row;
   justify-content: center;
+  /* centers content horizontally */
   align-items: center;
-  gap: 5rem;
-  height: 80vh;
+  /* centers content vertically */
+  gap: 3rem;
+  min-height: 80vh;
   position: relative;
+  /* needed for ::before absolute positioning */
+  overflow: hidden;
+  /* ensures the pseudo-element doesn't overflow */
+  flex-wrap: wrap;
 }
 
+/* Background floating circle */
 #profile::before {
-  content: "";
+
   position: absolute;
-  top: -50%;
-  right: -50%;
-  width: 500px;
-  height: 500px;
+  top: 50%;
+  /* vertically center */
+  left: 50%;
+  /* horizontally center */
+  transform: translate(-50%, -50%);
+  /* center exactly */
+  width: 300px;
+  height: 300px;
   background: var(--gradient-primary);
   border-radius: 50%;
   opacity: 0.1;
   animation: float 6s ease-in-out infinite;
+  z-index: -1;
+  /* behind the content */
 }
 
+@media (max-width: 768px) {
+  #profile::before {
+    width: 200px;
+    height: 200px;
+  }
+}
+
+
 @keyframes float {
-  0%, 100% {
+
+  0%,
+  100% {
     transform: translateY(0);
   }
+
   50% {
     transform: translateY(-20px);
   }
@@ -230,6 +257,21 @@ section {
   margin: auto 0;
   position: relative;
   animation: fadeInUp 0.8s ease-out;
+  flex-shrink: 0;
+}
+
+@media (max-width: 768px) {
+  .section__pic-container {
+    height: 250px;
+    width: 250px;
+  }
+}
+
+@media (max-width: 480px) {
+  .section__pic-container {
+    height: 200px;
+    width: 200px;
+  }
 }
 
 .section__pic-container img {
@@ -277,11 +319,24 @@ section {
   font-weight: 700;
 }
 
+@media (max-width: 768px) {
+  .title {
+    font-size: 2rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .title {
+    font-size: 1.5rem;
+  }
+}
+
 @keyframes fadeInUp {
   from {
     opacity: 0;
     transform: translateY(30px);
   }
+
   to {
     opacity: 1;
     transform: translateY(0);
@@ -400,8 +455,15 @@ section {
 
 .arrow {
   position: absolute;
-  right: -5rem;
+  right: 2rem;
   bottom: 2.5rem;
+  display: block;
+}
+
+@media (max-width: 768px) {
+  .arrow {
+    display: none;
+  }
 }
 
 .details-container {
@@ -461,68 +523,117 @@ section {
 
 .arrow {
   position: absolute;
-  right: -5rem;
+  right: 2rem;
   bottom: 2.5rem;
-  animation: bounce 2s infinite;
+  display: block;
 }
 
 @keyframes bounce {
-  0%, 100% {
+
+  0%,
+  100% {
     transform: translateY(0);
   }
+
   50% {
     transform: translateY(10px);
   }
 }
 
-/* Responsive Styles */
 @media (max-width: 768px) {
+  .arrow {
+    display: none;
+  }
+}
+
+/* Responsive Styles */
+@media (max-width: 1024px) {
+  section {
+    padding-left: 1.5rem;
+    padding-right: 1.5rem;
+  }
+}
+
+@media (max-width: 768px) {
+  section {
+    padding-left: 1rem;
+    padding-right: 1rem;
+  }
+  
   .contact-info-container {
     gap: 15px;
-    /* Reduced gap on smaller screens */
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+  
+  .section__text__p1 {
+    font-size: 1rem;
+  }
+  
+  .section__text__p2 {
+    font-size: 1.5rem;
+  }
+  
+  #profile {
+    min-height: 60vh;
   }
 }
 
 @media (max-width: 480px) {
+  section {
+    padding-left: 1rem;
+    padding-right: 1rem;
+    padding-top: 2vh;
+  }
+  
   .section__text__p1 {
-    font-size: 14px;
-    /* Adjust font size for smaller screens */
+    font-size: 0.9rem;
   }
 
-  .title {
-    font-size: 20px;
-    /* Adjust font size for smaller screens */
+  .section__text__p2 {
+    font-size: 1.25rem;
   }
 
   .contact-info-item {
-    font-size: 14px;
-    /* Adjust font size for smaller screens */
+    font-size: 0.9rem;
   }
 
   .contact-info-item img {
     width: 20px;
-    /* Smaller icon size */
     height: 20px;
-    /* Smaller icon size */
+  }
+  
+  .btn {
+    padding: 0.75rem 1rem;
+    font-size: 0.9rem;
+  }
+  
+  .nav-links {
+    font-size: 1.2rem;
+  }
+  
+  #profile {
+    min-height: 50vh;
+    gap: 1.5rem;
   }
 }
 
-
-
-/* FOOTER SECTION */
-
-footer {
-  height: 26vh;
-  margin: 0 1rem;
+/* Tablet Styles */
+@media (max-width: 1024px) {
+  nav {
+    height: 12vh;
+  }
+  
+  .experience-details-container {
+    flex-wrap: wrap;
+  }
+  
+  .details-container {
+    flex: 0 1 calc(50% - 1rem);
+  }
 }
 
-footer p {
-  text-align: center;
-}
-
-/* RESPONSIVE STYLES */
-
-/* Mobile Styles */
+/* Final Mobile Responsive - Enhanced */
 
 @media (max-width: 768px) {
   .nav-links {
@@ -531,14 +642,23 @@ footer p {
   }
 
   #hamburger-nav {
-    display: block;
+    display: flex;
     /* Show hamburger menu on mobile */
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem;
+    height: auto;
+  }
+  
+  #desktop-nav {
+    display: none;
   }
 
   nav {
     height: auto;
     /* Allow nav to adjust height on mobile */
-    flex-direction: column;
+    flex-direction: row;
+    padding: 1rem;
   }
 
   .hamburger-icon {
@@ -549,29 +669,13 @@ footer p {
   .hamburger-icon span {
     height: 1.5px;
   }
-
-  .section__pic-container {
-    height: 200px;
-    width: 200px;
-  }
-
-  .title {
-    font-size: 2rem;
-  }
-
-  .btn {
-    width: 6rem;
-    padding: 0.8rem;
-  }
-
-  .about-pic {
-    height: 250px;
-    width: 250px;
-  }
-
+  
   .experience-details-container {
     flex-direction: column;
-    /* Stack items vertically on mobile */
+  }
+  
+  .details-container {
+    flex: 1 1 100%;
   }
 
   .article-container {
@@ -583,3 +687,14 @@ footer p {
     width: 100%;
     height: auto;
   }
+  
+  .btn-container {
+    flex-direction: column;
+    gap: 0.75rem;
+  }
+  
+  .btn {
+    width: 100%;
+  }
+}
+
