@@ -32,6 +32,7 @@
       <li><a href="./index.html#home">Home</a></li>
       <li><a href="./index.html#about">About</a></li>
       <li><a href="./index.html#skills">Skills</a></li>
+      <li><a href="./resume.html" class="active">Resume</a></li>
       <li><a href="./blogs/blog.html">Blog</a></li>
       <li><a href="./index.html#contact">Contact</a></li>
     </ul>
@@ -41,64 +42,92 @@
   <div class="resume-container">
     <!-- Header -->
     <header class="resume-header">
-      <h1>Abhiram Padhi</h1>
-      <p class="resume-title">Full-Stack Developer</p>
+      <div class="header-top">
+        <div class="header-main">
+          <h1 class="resume-name">Abhiram Padhi</h1>
+          <p class="resume-title">Full-Stack Developer | Cloud Architect | .NET Expert</p>
+          <p class="resume-summary">11+ Years | Azure | .NET Core | Angular | Enterprise Solutions</p>
+        </div>
+        <div class="header-stats">
+          <div class="stat-item">
+            <span class="stat-number">11+</span>
+            <span class="stat-label">Years Experience</span>
+          </div>
+          <div class="stat-item">
+            <span class="stat-number">4</span>
+            <span class="stat-label">Azure Certifications</span>
+          </div>
+        </div>
+      </div>
       <div class="resume-contact">
-        <span>📧 <a href="mailto:abhiraampadhi@outlook.com">abhiraampadhi@outlook.com</a></span>
-        <span>📍 Almere, Netherlands</span>
-        <span>🔗 <a href="https://www.linkedin.com/in/abhiraampadhi/" target="_blank">LinkedIn</a></span>
-        <span>💻 <a href="https://github.com/AbhiramPadhi" target="_blank">GitHub</a></span>
+        <a href="mailto:abhiraampadhi@outlook.com" class="contact-link">
+          <span class="contact-icon">📧</span>
+          <span>abhiraampadhi@outlook.com</span>
+        </a>
+        <span class="contact-divider">•</span>
+        <span class="contact-text">📍 Almere, Netherlands</span>
+        <span class="contact-divider">•</span>
+        <a href="https://www.linkedin.com/in/abhiraampadhi/" target="_blank" class="contact-link">
+          <span class="contact-icon">🔗</span>
+          <span>LinkedIn</span>
+        </a>
+        <span class="contact-divider">•</span>
+        <a href="https://github.com/AbhiramPadhi" target="_blank" class="contact-link">
+          <span class="contact-icon">💻</span>
+          <span>GitHub</span>
+        </a>
       </div>
     </header>
 
     <div class="resume-body">
       <!-- Professional Summary -->
-      <section class="resume-section">
-        <h2 class="section-header">Professional Summary</h2>
-        <p>
-          Accomplished Full-Stack Developer with 11+ years of professional experience designing and building 
-          scalable, high-performance cloud-native applications. Expert in modern technologies including .NET Core, 
-          ASP.NET, Azure cloud services, and Angular with TypeScript. Demonstrated expertise in architecting 
-          enterprise-level solutions, implementing SOLID principles, designing microservices, and establishing 
-          robust CI/CD pipelines. Strong track record of delivering mission-critical applications in fast-paced, 
-          collaborative environments. Passionate about clean code, performance optimization, and mentoring junior developers.
-        </p>
-      </section>
+      <section class="resume-section summary-section">
+        <h2 class="section-header"><span class="header-icon">👤</span> Professional Summary</h2>
+        <div class="summary-box">
+          <p>
+          Experienced Full-Stack Developer with 11+ years of professional expertise in designing, developing, and deploying 
+          scalable cloud-native applications. Specialized in Microsoft Azure ecosystem, .NET Core, C#, and modern Angular frameworks. 
+          Proven expertise in architecting enterprise solutions, implementing SOLID principles, Domain-Driven Design (DDD), 
+          Test-Driven Development (TDD), and Behavior-Driven Development (BDD). Strong background in microservices architecture, 
+          RESTful API design, and secure application development using OAuth 2.0 and JWT. Passionate about code quality, performance 
+          optimization, technical leadership, and mentoring junior developers in Agile environments.
+          </p>
+        </div>
 
       <!-- Key Achievements -->
-      <section class="resume-section">
-        <h2 class="section-header">Key Achievements</h2>
+      <section class="resume-section achievements-section">
+        <h2 class="section-header"><span class="header-icon">🏆</span> Key Achievements</h2>
         <div class="achievements-grid">
           <div class="achievement-card">
-            <h4>Cloud Migration Leadership</h4>
-            <p>Successfully migrated 25+ legacy applications to Azure cloud, reducing infrastructure costs by 45% while improving scalability and reliability</p>
+            <h4>Technical Leadership</h4>
+            <p>Led development teams as Team Lead at LTIMindtree, mentoring junior developers and establishing coding standards and best practices</p>
           </div>
           <div class="achievement-card">
-            <h4>Performance Optimization</h4>
-            <p>Optimized database queries and implemented caching strategies, improving application response time from 5s to 200ms (96% improvement)</p>
+            <h4>Azure Cloud Expertise</h4>
+            <p>Extensive experience with Microsoft Azure services including Web Apps, Functions, SQL Database, Blob Storage, API Management, and DevOps pipelines</p>
           </div>
           <div class="achievement-card">
-            <h4>CI/CD Pipeline Implementation</h4>
-            <p>Established automated CI/CD pipelines using Azure DevOps and GitHub Actions, reducing deployment time from hours to minutes</p>
+            <h4>Full Stack Development</h4>
+            <p>11+ years of expertise across .NET Core, C#, ASP.NET, Angular, TypeScript, and SQL Server with focus on scalable architecture</p>
           </div>
           <div class="achievement-card">
-            <h4>Team Leadership</h4>
-            <p>Mentored 10+ junior developers, conducted technical training sessions, and established coding standards across the organization</p>
+            <h4>Design Patterns & Best Practices</h4>
+            <p>Proficient in SOLID principles, DDD, TDD, BDD, CQRS, Repository Pattern, and other enterprise design patterns</p>
           </div>
           <div class="achievement-card">
-            <h4>Microservices Architecture</h4>
-            <p>Designed and implemented microservices-based solutions handling 10M+ daily transactions with 99.99% uptime</p>
+            <h4>Security Implementation</h4>
+            <p>In-depth knowledge of OAuth 2.0, JWT, OWASP, TLS, and data protection techniques for secure cloud applications</p>
           </div>
           <div class="achievement-card">
-            <h4>Cost Optimization</h4>
-            <p>Identified and implemented cost optimization strategies resulting in $200K+ annual savings in cloud infrastructure expenses</p>
+            <h4>Test-Driven Development</h4>
+            <p>Expert in unit testing and test automation using NUnit, xUnit, MSTest, SpecFlow, and Moq for comprehensive code coverage</p>
           </div>
         </div>
       </section>
 
       <!-- Core Competencies -->
-      <section class="resume-section">
-        <h2 class="section-header">Core Competencies</h2>
+      <section class="resume-section competencies-section">
+        <h2 class="section-header"><span class="header-icon">💡</span> Core Competencies</h2>
         <div class="competencies-grid">
           <div class="competency-column">
             <h3>Backend Development</h3>
@@ -144,87 +173,127 @@
       </section>
 
       <!-- Technical Skills -->
-      <section class="resume-section">
-        <h2 class="section-header">Technical Skills</h2>
+      <section class="resume-section skills-section">
+        <h2 class="section-header"><span class="header-icon">⚙️</span> Technical Skills & Expertise</h2>
         <div class="skill-categories">
           <div class="skill-category">
-            <strong>Languages:</strong> C#, JavaScript, TypeScript, SQL, PowerShell, Bash, KQL
+            <strong>Languages & Frameworks:</strong> C#, .NET Framework, .NET Core, ASP.NET MVC, ASP.NET Web API, Entity Framework Core, JavaScript, TypeScript, Angular
           </div>
           <div class="skill-category">
-            <strong>Databases:</strong> MS SQL Server, Oracle, Azure SQL, Cosmos DB, Azure Blob Storage
+            <strong>Azure Services:</strong> Web Apps, Function Apps, App Service, Key Vault, Application Insights, Azure SQL Database, Blob Storage, Cosmos DB, API Management, Service Bus Queues, Azure DevOps, Azure Monitor, Active Directory (Entra ID)
           </div>
           <div class="skill-category">
-            <strong>Cloud Platforms:</strong> Microsoft Azure, Azure DevOps, Azure Functions, Logic Apps, API Management
+            <strong>Databases:</strong> MS SQL Server, SQL queries, stored procedures, triggers, views, performance tuning, Oracle Database
           </div>
           <div class="skill-category">
-            <strong>Tools & Platforms:</strong> Visual Studio, VS Code, Git, Docker, Kubernetes, SonarQube, Postman
+            <strong>Frontend Technologies:</strong> HTML5, CSS3, Bootstrap, TypeScript, Angular, Single Page Applications (SPA), responsive design
           </div>
           <div class="skill-category">
-            <strong>Methodologies:</strong> Agile/Scrum, SOLID Principles, Design Patterns, TDD, CI/CD
+            <strong>Architecture & Design:</strong> Domain-Driven Design (DDD), SOLID Principles, Design Patterns (CQRS, Repository, Unit of Work, Factory), RESTful APIs, Microservices
+          </div>
+          <div class="skill-category">
+            <strong>Testing & Quality:</strong> Test-Driven Development (TDD), Behavior-Driven Development (BDD), Unit Testing (NUnit, xUnit, MSTest), SpecFlow, Moq, test automation
+          </div>
+          <div class="skill-category">
+            <strong>Security & Best Practices:</strong> OAuth 2.0, JWT, OWASP, TLS, data protection, JWT authentication, secure coding practices
+          </div>
+          <div class="skill-category">
+            <strong>Version Control & CI/CD:</strong> TFS, Git, Azure DevOps, CI/CD pipelines, automated deployment, Agile methodologies
+          </div>
+          <div class="skill-category">
+            <strong>Tools & Platforms:</strong> Visual Studio, VS Code, Swagger/OpenAPI, Postman, JIRA, Confluence, SonarQube, Docker, Kubernetes (AKS)
+          </div>
+          <div class="skill-category">
+            <strong>Methodologies:</strong> Agile/Scrum, software best practices, pair programming, code reviews, full SDLC
           </div>
         </div>
       </section>
 
       <!-- Work Experience -->
-      <section class="resume-section">
-        <h2 class="section-header">Professional Experience</h2>
+      <section class="resume-section experience-section">
+        <h2 class="section-header"><span class="header-icon">💼</span> Professional Experience</h2>
         
         <div class="experience-item">
           <div class="experience-header">
-            <h3>Senior Full-Stack Developer</h3>
-            <span class="experience-date">2019 - Present (6 years)</span>
+            <h3>Full Stack Developer</h3>
+            <span class="experience-date">July 2024 - Present</span>
           </div>
-          <p class="experience-company">Tech Solutions Inc., Netherlands</p>
+          <p class="experience-company">Priva, Netherlands</p>
           <ul class="experience-description">
-            <li>Architected and led development of cloud-native applications using .NET Core 6+ and Azure cloud services, serving millions of users globally</li>
-            <li>Designed and implemented microservices-based solutions with Docker and Kubernetes, handling 10M+ daily transactions with 99.99% uptime</li>
-            <li>Established CI/CD pipelines using Azure DevOps and GitHub Actions, reducing deployment time by 85% and enabling 50+ deployments per day</li>
-            <li>Mentored 8+ junior developers, conducted bi-weekly technical training, and established SOLID principles-based coding standards across the team</li>
-            <li>Optimized database query performance and implemented intelligent caching strategies, improving application response time by 96%</li>
-            <li>Led Azure cloud migration initiative for 25+ legacy applications, achieving 45% cost reduction and improved scalability</li>
-            <li>Implemented comprehensive security measures including OAuth 2.0, JWT authentication, and role-based access control (RBAC)</li>
-            <li>Designed RESTful APIs with comprehensive OpenAPI/Swagger documentation, consumed by 15+ internal and external clients</li>
+            <li>Develop and maintain cloud-based applications using .NET Core, C#, and Angular with focus on performance and scalability</li>
+            <li>Facilitate seamless communication between front-end applications and back-end systems</li>
+            <li>Collaborate with cross-functional teams to deliver scalable and maintainable solutions</li>
+            <li>Implement best practices and methodologies for robust application development</li>
           </ul>
         </div>
 
         <div class="experience-item">
           <div class="experience-header">
-            <h3>Full-Stack Developer</h3>
-            <span class="experience-date">2015 - 2019 (4 years)</span>
+            <h3>Senior Associate / Software Developer</h3>
+            <span class="experience-date">July 2016 - December 2021 & February 2023 - June 2024</span>
           </div>
-          <p class="experience-company">Digital Enterprises Ltd., India</p>
+          <p class="experience-company">Cognizant, India</p>
           <ul class="experience-description">
-            <li>Developed and maintained enterprise-level web applications using ASP.NET MVC, ASP.NET Core, and Angular 8+, serving 100K+ active users</li>
-            <li>Implemented SOLID principles (Single Responsibility, Open/Closed, Liskov Substitution, Interface Segregation, Dependency Inversion) and design patterns (Factory, Singleton, Repository, Dependency Injection)</li>
-            <li>Collaborated with cross-functional teams (Product, Design, QA) in Agile/Scrum environments with 2-week sprints</li>
-            <li>Created comprehensive unit tests (xUnit, NUnit) and integration tests, achieving 80%+ code coverage and reducing bug escape rate by 60%</li>
-            <li>Migrated 5+ legacy ASP.NET Framework applications to modern .NET Core architecture with zero downtime during transition</li>
-            <li>Implemented Entity Framework Core with advanced LINQ queries, optimizing database access and reducing query execution time by 70%</li>
-            <li>Designed and developed responsive Angular components with TypeScript, improving user experience and mobile compatibility</li>
-            <li>Managed SQL Server databases, created stored procedures, implemented indexes, and optimized query performance</li>
+            <li>Collaborated with Architecture and Integrations teams to develop best practices and methodologies for enterprise applications</li>
+            <li>Worked closely with cross-functional teams (BA, PO, QA) to gather requirements, define user stories, and deliver software solutions</li>
+            <li>Enforced coding standards, best practices, and quality assurance processes ensuring high-quality, bug-free software delivery</li>
+            <li>Provided technical leadership and guidance to development teams, mentoring junior developers in .NET and Azure technologies</li>
+            <li>Leveraged Azure cloud services (Web Apps, Functions, Key Vault, Application Insights, Azure SQL, Blob Storage) to enhance scalability</li>
+            <li>Implemented CI/CD pipelines using Azure DevOps for automated testing and deployment</li>
+            <li>Designed and implemented RESTful APIs with comprehensive documentation using Swagger</li>
+            <li>Applied DDD, TDD, and SOLID principles to architect scalable and maintainable systems</li>
           </ul>
         </div>
 
         <div class="experience-item">
           <div class="experience-header">
-            <h3>.NET Developer</h3>
-            <span class="experience-date">2013 - 2015 (2 years)</span>
+            <h3>Team Lead</h3>
+            <span class="experience-date">January 2022 - January 2023</span>
           </div>
-          <p class="experience-company">Software House Innovations, India</p>
+          <p class="experience-company">LTIMindtree, India</p>
           <ul class="experience-description">
-            <li>Built web applications using ASP.NET Framework, C#, and SQL Server, serving diverse clientele across finance and e-commerce sectors</li>
-            <li>Participated in code reviews, provided constructive feedback, and contributed to best practices documentation for the team</li>
-            <li>Debugged and resolved complex technical issues in production environments, reducing average resolution time to 2 hours</li>
-            <li>Developed RESTful web services and APIs for third-party integrations, enabling seamless data exchange with 8+ external systems</li>
-            <li>Implemented front-end functionality using JavaScript and jQuery, creating interactive and user-friendly web interfaces</li>
-            <li>Contributed to architecture design discussions and technical decision-making processes</li>
+            <li>Developed, tested, and deployed web applications using .NET Core, Angular, and REST APIs in Azure cloud environment</li>
+            <li>Led agile ceremonies including sprint planning, code reviews, and retrospective meetings to improve team processes</li>
+            <li>Worked closely with Product Owner to prioritize features and translate PBIs into actionable development tasks</li>
+            <li>Developed clean, well-tested code through pair programming and comprehensive code reviews</li>
+            <li>Created reusable custom components and features for use across development teams</li>
+            <li>Collaborated with UX/UI designers to implement accessible and visually appealing responsive interfaces</li>
+            <li>Wrote comprehensive unit tests with mocking across different architectural layers using NUnit and xUnit</li>
+          </ul>
+        </div>
+
+        <div class="experience-item">
+          <div class="experience-header">
+            <h3>Software Developer</h3>
+            <span class="experience-date">March 2014 - June 2016</span>
+          </div>
+          <p class="experience-company">SISA, India</p>
+          <ul class="experience-description">
+            <li>Designed and developed web applications using ASP.NET, C#, JavaScript, and SQL Server following full SDLC</li>
+            <li>Wrote clean, scalable code using .NET programming languages with focus on maintainability</li>
+            <li>Improved and maintained existing applications, identifying and fixing bugs in production systems</li>
+            <li>Developed comprehensive documentation throughout the SDLC for knowledge transfer</li>
+            <li>Participated in day-to-day maintenance of application systems, identifying and troubleshooting application issues</li>
+          </ul>
+        </div>
+
+        <div class="experience-item">
+          <div class="experience-header">
+            <h3>Software Trainee</h3>
+            <span class="experience-date">April 2013 - January 2014</span>
+          </div>
+          <p class="experience-company">AGTSPL, India</p>
+          <ul class="experience-description">
+            <li>Designed and developed web applications using ASP.NET, C#, JavaScript, and SQL Server following full SDLC</li>
+            <li>Learned and applied foundational software development principles and best practices</li>
+            <li>Contributed to web application development projects under senior developer guidance</li>
           </ul>
         </div>
       </section>
 
       <!-- Education -->
-      <section class="resume-section">
-        <h2 class="section-header">Education & Certifications</h2>
+      <section class="resume-section education-section">
+        <h2 class="section-header"><span class="header-icon">🎓</span> Education & Certifications</h2>
         
         <div class="education-item">
           <div class="education-header">
@@ -273,68 +342,6 @@
           <p class="education-details">Credential ID: Azure-AZ204-2023 | Valid through 2028</p>
         </div>
       </section>
-
-      <!-- Certifications & Achievements -->
-      <section class="resume-section">
-        <h2 class="section-header">Notable Achievements & Recognition</h2>
-        <ul class="achievement-list">
-          <li><strong>Developer of the Year (2020)</strong> - Tech Solutions Inc. - Recognized for exceptional contribution to cloud migration project and mentoring</li>
-          <li><strong>Performance Excellence Award (2021)</strong> - Recognized for outstanding performance optimization initiative saving 45% infrastructure costs</li>
-          <li><strong>50+ Enterprise Projects Delivered</strong> - Successfully delivered mission-critical applications across finance, e-commerce, and healthcare sectors</li>
-          <li><strong>Technical Speaker</strong> - Presented at 8+ tech conferences on topics including microservices, cloud architecture, and .NET best practices</li>
-          <li><strong>Open Source Contributor</strong> - Active contributor to popular .NET and Angular projects with 500+ GitHub stars accumulated</li>
-          <li><strong>Microsoft Azure Partner</strong> - Part of tech partner network delivering Azure solutions to enterprise clients</li>
-          <li><strong>Agile Certified Practitioner</strong> - Certified Scrum Master (CSM) with 8+ years of Agile/Scrum experience</li>
-          <li><strong>Code Quality Champion</strong> - Established SonarQube analysis pipeline improving code maintainability index from C to A grade</li>
-        </ul>
-      </section>
-
-      <!-- Notable Projects -->
-      <section class="resume-section">
-        <h2 class="section-header">Notable Projects</h2>
-        
-        <div class="experience-item">
-          <div class="experience-header">
-            <h3>Enterprise Cloud Migration Platform</h3>
-            <span class="experience-date">2020 - 2022</span>
-          </div>
-          <p class="experience-company">Tech Solutions Inc.</p>
-          <ul class="experience-description">
-            <li>Architected and led development of comprehensive cloud migration platform enabling migration of 25+ legacy applications</li>
-            <li>Tech Stack: .NET Core 6, Azure App Services, Azure SQL Database, Azure DevOps, Angular 12, TypeScript</li>
-            <li>Implemented automated assessment tools, migration workflows, and post-migration validation checks</li>
-            <li>Result: $200K+ annual cost savings with zero production downtime during migrations</li>
-          </ul>
-        </div>
-
-        <div class="experience-item">
-          <div class="experience-header">
-            <h3>Real-Time Analytics Dashboard</h3>
-            <span class="experience-date">2021 - 2022</span>
-          </div>
-          <p class="experience-company">Tech Solutions Inc.</p>
-          <ul class="experience-description">
-            <li>Designed and implemented high-performance analytics platform processing 100M+ daily events</li>
-            <li>Tech Stack: .NET Core, Azure Functions, Cosmos DB, Azure Event Hubs, SignalR, Angular</li>
-            <li>Implemented real-time data streaming, aggregation, and visualization capabilities</li>
-            <li>Result: Reduced reporting latency from hours to seconds with 99.99% availability</li>
-          </ul>
-        </div>
-
-        <div class="experience-item">
-          <div class="experience-header">
-            <h3>Microservices Payment Processing System</h3>
-            <span class="experience-date">2019 - 2021</span>
-          </div>
-          <p class="experience-company">Digital Enterprises Ltd.</p>
-          <ul class="experience-description">
-            <li>Led development of distributed payment processing system handling $500M+ annual transactions</li>
-            <li>Tech Stack: .NET Core, Docker, Kubernetes (AKS), RabbitMQ, SQL Server, Redis, Angular</li>
-            <li>Implemented service-to-service communication, distributed transaction management, and fault tolerance patterns</li>
-            <li>Result: Achieved 99.99% uptime with ability to process 50K+ transactions per second</li>
-          </ul>
-        </div>
-      </section>
     </div>
 
     <!-- Download Button -->
@@ -353,25 +360,26 @@
     <div class="footer-content">
       <div class="footer-section">
         <h3>About</h3>
-        <p>Full Stack Developer with 11+ years of experience in building scalable applications.</p>
+        <p>Full Stack Developer with 11+ years of professional experience in architecting and building scalable, high-performance applications using modern cloud technologies.</p>
       </div>
       <div class="footer-section">
         <h3>Quick Links</h3>
         <a href="./index.html#home">Home</a>
         <a href="./index.html#about">About</a>
         <a href="./index.html#skills">Skills</a>
+        <a href="./resume.html">Resume</a>
         <a href="./blogs/blog.html">Blog</a>
         <a href="./index.html#contact">Contact</a>
       </div>
       <div class="footer-section">
         <h3>Follow Me</h3>
-        <a href="https://www.linkedin.com/in/abhiraampadhi/">LinkedIn</a>
-        <a href="https://github.com/AbhiramPadhi">GitHub</a>
+        <a href="https://www.linkedin.com/in/abhiraampadhi/" target="_blank">LinkedIn</a>
+        <a href="https://github.com/AbhiramPadhi" target="_blank">GitHub</a>
         <a href="mailto:abhiraampadhi@outlook.com">Email</a>
       </div>
     </div>
     <div class="footer-bottom">
-      <p>&copy; <span id="year">2024</span> Abhiram Padhi. All rights reserved.</p>
+      <p>&copy; <span id="year">2025</span> Abhiram Padhi. All rights reserved.</p>
     </div>
   </footer>
 
