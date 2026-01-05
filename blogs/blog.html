@@ -1,182 +1,86 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
-    <!-- Google tag (gtag.js) -->
-    <script async src="https://www.googletagmanager.com/gtag/js?id=G-LHKH7YCJMB"></script>
-    <script>
-        window.dataLayer = window.dataLayer || [];
-        function gtag() { dataLayer.push(arguments); }
-        gtag('js', new Date());
-
-        gtag('config', 'G-LHKH7YCJMB');
-    </script>
-    <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>TechTalksByAbhiram Blog</title>
-    <link rel="stylesheet" href="blog.css" />
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="TechTalks by Abhiram - Blog about full-stack development, Azure, .NET, and modern web technologies." />
+  
+  <!-- Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-LHKH7YCJMB"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag() { dataLayer.push(arguments); }
+    gtag('js', new Date());
+    gtag('config', 'G-LHKH7YCJMB');
+  </script>
+  
+  <title>TechTalks by Abhiram | Blog</title>
+  <link rel="stylesheet" href="../css/main.css" />
+  <link rel="stylesheet" href="../css/blog.css" />
 </head>
-
 <body>
-    <!-- Navigation -->
-    <nav>
-        <a href="index.html" class="logo">Abhiram Padhi</a>
-    </nav>
+  <!-- Navigation -->
+  <nav>
+    <a href="../index.html" class="nav-brand">Abhiram Padhi</a>
+    <button class="hamburger-btn" id="hamburgerBtn" aria-label="Toggle navigation menu">
+      <span></span>
+      <span></span>
+      <span></span>
+    </button>
+    <ul class="nav-menu" id="navMenu">
+      <li><a href="../index.html#home">Home</a></li>
+      <li><a href="../index.html#about">About</a></li>
+      <li><a href="../index.html#skills">Skills</a></li>
+      <li><a href="../blogs/blog.html" class="active">Blog</a></li>
+      <li><a href="../index.html#contact">Contact</a></li>
+    </ul>
+  </nav>
 
-    <!-- Blog Section -->
-    <section id="blog">
-        <div class="container">
-            <h1 class="title">TechTalks by Abhiram</h1>
-            <p class="subtitle">Exploring technologies, best practices, and insights in full-stack development</p>
+  <!-- Blog Header -->
+  <section class="blog-hero">
+    <div class="section-title">
+      <h1>TechTalks by Abhiram</h1>
+      <p class="hero-subtitle">Exploring technologies, best practices, and insights in full-stack development</p>
+    </div>
+  </section>
 
-            <div class="blog-posts">
-                <!-- Blog Post 1 -->
-                <article class="blog-post">
-                    <h2 class="blog-title">Mastering TypeScript</h2>
-                    <p class="blog-date">January 30, 2024</p>
-                    <p class="blog-summary">TypeScript adds strong typing to JavaScript, enhancing code quality and
-                        maintainability. Learn the key features and how to use TypeScript in your projects.</p>
-                    <a href="blog-post4.html" class="btn-color-1">Read More</a>
-                </article>
+  <!-- Blog Posts -->
+  <section class="blog-section">
+    <div class="blog-grid" id="blogGrid">
+      <!-- Blog posts will be dynamically loaded here -->
+    </div>
+  </section>
 
-                <!-- Blog Post 2 -->
-                <article class="blog-post">
-                    <h2 class="blog-title">Understanding REST APIs</h2>
-                    <p class="blog-date">February 25, 2024</p>
-                    <p class="blog-summary">REST APIs are crucial for building scalable web services. Discover how they
-                        work and best practices for designing and implementing them effectively.</p>
-                    <a href="blog-post3.html" class="btn-color-1">Read More</a>
-                </article>
+  <!-- Footer -->
+  <footer>
+    <div class="footer-content">
+      <div class="footer-section">
+        <h3>About</h3>
+        <p>Sharing insights and knowledge about full-stack development and modern technologies.</p>
+      </div>
+      <div class="footer-section">
+        <h3>Quick Links</h3>
+        <a href="../index.html#home">Home</a>
+        <a href="../index.html#about">About</a>
+        <a href="../index.html#skills">Skills</a>
+        <a href="#blog">Blog</a>
+        <a href="../index.html#contact">Contact</a>
+      </div>
+      <div class="footer-section">
+        <h3>Follow Me</h3>
+        <a href="https://www.linkedin.com/in/abhiraampadhi/">LinkedIn</a>
+        <a href="https://github.com/AbhiramPadhi">GitHub</a>
+        <a href="mailto:abhiraampadhi@outlook.com">Email</a>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>&copy; <span id="year">2024</span> Abhiram Padhi. All rights reserved.</p>
+    </div>
+  </footer>
 
-                <!-- Blog Post 3 -->
-                <article class="blog-post">
-                    <h2 class="blog-title">Exploring Angular Signals</h2>
-                    <p class="blog-date">March 15, 2024</p>
-                    <p class="blog-summary">Signals are a new concept in Angular for managing state and reactivity.
-                        Learn how they simplify data flow and improve performance in your Angular applications.</p>
-                    <a href="blog-post2.html" class="btn-color-1">Read More</a>
-                </article>
-
-                <!-- Blog Post 4 -->
-                <article class="blog-post">
-                    <h2 class="blog-title">Building a REST API with ASP.NET Core</h2>
-                    <p class="blog-date">April 20, 2024</p>
-                    <p class="blog-summary">Learn how to create a robust and scalable REST API with ASP.NET Core. This
-                        guide covers setup, data modeling, and creating controllers.</p>
-                    <a href="blog-post5.html" class="btn-color-1">Read More</a>
-                </article>
-
-                <!-- Blog Post 5 -->
-                <article class="blog-post">
-                    <h2 class="blog-title">Introduction to Angular Reactive Forms</h2>
-                    <p class="blog-date">May 10, 2024</p>
-                    <p class="blog-summary">Discover the power of Angular Reactive Forms for managing complex forms with
-                        ease. Learn about FormControl, FormGroup, and form validation.</p>
-                    <a href="blog-post6.html" class="btn-color-1">Read More</a>
-                </article>
-
-                <!-- Blog Post 6 -->
-                <article class="blog-post">
-                    <h2 class="blog-title">Using Angular Directives Effectively</h2>
-                    <p class="blog-date">June 28, 2024</p>
-                    <p class="blog-summary">Explore Angular directives and how they can enhance your application. Learn
-                        how to create custom directives and apply best practices for their use.</p>
-                    <a href="blog-post7.html" class="btn-color-1">Read More</a>
-                </article>
-
-                <!-- Blog Post 7 -->
-                <article class="blog-post">
-                    <h2 class="blog-title">Key Considerations When Creating a New Angular Application</h2>
-                    <p class="blog-date">July 18, 2024</p>
-                    <p class="blog-summary">Discover the essential steps and best practices when starting a new Angular
-                        project. From setting up the environment to optimizing performance and security, this guide
-                        covers it all.</p>
-                    <a href="blog-post8.html" class="btn-color-1">Read More</a>
-                </article>
-
-                <!-- Blog Post 8 -->
-                <article class="blog-post">
-                    <h2 class="blog-title">Effective Branching Strategy for Development Teams</h2>
-                    <p class="blog-date">August 23, 2024</p>
-                    <p class="blog-summary">Learn how to implement an efficient branching strategy for your development
-                        team. Explore common branching models like GitFlow and GitHub Flow, and best practices for
-                        managing releases, hotfixes, and CI/CD integration.</p>
-                    <a href="blog-post9.html" class="btn-color-1">Read More</a>
-                </article>
-
-                <!-- Blog Post 9 -->
-                <article class="blog-post">
-                    <h2 class="blog-title">SOLID Principles in Software Design</h2>
-                    <p class="blog-date">September 14, 2024</p>
-                    <p class="blog-summary">Master the SOLID principles to write maintainable, scalable, and robust
-                        software.</p>
-                    <a href="blog-post1.html" class="btn-color-1">Read More</a>
-                </article>
-
-                <!-- Blog Post 10 -->
-                <article class="blog-post">
-                    <h2 class="blog-title">.NET Coding Standards: Best Practices for Clean and Maintainable Code</h2>
-                    <p class="blog-date">August 30, 2024</p>
-                    <p class="blog-summary">Discover essential .NET coding standards to ensure clean, consistent, and
-                        maintainable code. Learn about naming conventions, formatting guidelines, SOLID principles, and
-                        more to enhance your .NET development practices.</p>
-                    <a href="blog-post10.html" class="btn-color-1">Read More</a>
-                </article>
-
-                <!-- Blog Post 11 -->
-                <article class="blog-post">
-                    <h2 class="blog-title">Which Middleware Implementation is Your Favorite?</h2>
-                    <p class="blog-date">October 11, 2024</p>
-                    <p class="blog-summary">
-                        Middleware plays a crucial role in handling requests and responses in the application pipeline.
-                        Learn about different approaches to middleware implementation in .NET, including delegate-based,
-                        convention-based, and factory-based middleware.
-                    </p>
-                    <a href="blog-post11.html" class="btn btn-color-1">Read More</a>
-                </article>
-
-                <!-- Blog Post 12 -->
-                <article class="blog-post">
-                    <h2 class="blog-title">Choosing the Best Approach to Call External APIs in C#</h2>
-                    <p class="blog-date">October 12, 2024</p>
-                    <p class="blog-summary">
-                        In today's interconnected world, applications often need to interact with external APIs. This
-                        article explores various approaches to calling external APIs in C#, including using HttpClient
-                        directly, implementing HttpClient wrappers, utilizing extension methods, and leveraging
-                        third-party libraries like RestSharp. Discover the best practices to enhance your API
-                        integration.
-                    </p>
-                    <a href="blog-post12.html" class="btn btn-color-1">Read More</a>
-                </article>
-
-                <!-- Blog Post 13 -->
-                <article class="blog-post">
-                    <h2 class="blog-title">Using Entity Framework In-Memory Provider for Unit Testing</h2>
-                    <p class="blog-date">November 15, 2024</p>
-                    <p class="blog-summary">
-                        Unit testing database-dependent code can be challenging, but the Entity Framework In-Memory
-                        Provider simplifies the process. This article explains how to use the In-Memory Provider to test
-                        your Entity Framework Core applications effectively, with examples of setup, configuration, and
-                        practical unit test cases.
-                    </p>
-                    <a href="blog-post13.html" class="btn btn-color-1">Read More</a>
-                </article>
-
-                <!-- Blog Post 14 -->
-                <article class="blog-post">
-                    <h2 class="blog-title">Blazor vs ASP.NET MVC: Which One Should You Use?</h2>
-                    <p class="blog-date">May 18, 2025</p>
-                    <p class="blog-summary">
-                        Choosing between Blazor and ASP.NET MVC can be tough. This article provides a detailed comparison of both frameworks across architecture, performance, development experience, SEO, and use cases. Learn which is best for modern, interactive UIs vs traditional, SEO-friendly websites.
-                    </p>
-                    <a href="blog-post14.html" class="btn btn-color-1">Read More</a>
-                </article>
-
-
-            </div>
-        </div>
-    </section>
+  <!-- Scripts -->
+  <script src="../js/main.js"></script>
+  <script src="../js/blog.js"></script>
 </body>
-
 </html>

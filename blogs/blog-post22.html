@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Time Series Forecasting with .NET - TechTalks Blog</title>
+  
+  <!-- Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-LHKH7YCJMB"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag() { dataLayer.push(arguments); }
+    gtag('js', new Date());
+    gtag('config', 'G-LHKH7YCJMB');
+  </script>
+  
+  <link rel="stylesheet" href="../css/main.css" />
+  <link rel="stylesheet" href="../css/blog.css" />
+</head>
+<body>
+  <!-- Navigation -->
+  <nav>
+    <a href="../index.html" class="nav-brand">Abhiram Padhi</a>
+    <button class="hamburger-btn" id="hamburgerBtn" aria-label="Toggle navigation menu">
+      <span></span>
+      <span></span>
+      <span></span>
+    </button>
+    <ul class="nav-menu" id="navMenu">
+      <li><a href="../index.html#home">Home</a></li>
+      <li><a href="../index.html#about">About</a></li>
+      <li><a href="../index.html#skills">Skills</a></li>
+      <li><a href="../blogs/blog.html" class="active">Blog</a></li>
+      <li><a href="../index.html#contact">Contact</a></li>
+    </ul>
+  </nav>
+
+  <!-- Blog Post -->
+  <section class="blog-post-container">
+    <div class="blog-post-header">
+      <h1 class="blog-post-title">Time Series Forecasting with ML.NET</h1>
+      <div class="blog-post-meta">
+        <span class="blog-post-meta-item">📅 February 3, 2025</span>
+        <span class="blog-post-meta-item">✍️ Abhiram Padhi</span>
+      </div>
+    </div>
+
+    <div class="blog-post-content">
+      <p>
+        Time series forecasting is crucial for planning and decision-making in various domains. ML.NET provides specialized capabilities for building accurate forecasting models for stock prices, weather, demand, and other temporal data.
+      </p>
+
+      <h2>Understanding Time Series Data</h2>
+      <p>
+        Time series data consists of observations collected at regular intervals over time. The key challenge is to identify patterns, trends, and seasonality to make accurate predictions.
+      </p>
+
+      <h2>Common Time Series Patterns</h2>
+      <ul>
+        <li><strong>Trend:</strong> Long-term direction of data</li>
+        <li><strong>Seasonality:</strong> Repeating patterns over fixed periods</li>
+        <li><strong>Cyclicity:</strong> Long-term oscillations</li>
+        <li><strong>Noise:</strong> Random fluctuations</li>
+      </ul>
+
+      <h2>Forecasting Algorithms</h2>
+      <ul>
+        <li><strong>ARIMA:</strong> Autoregressive Integrated Moving Average</li>
+        <li><strong>Exponential Smoothing:</strong> Weighted average of historical data</li>
+        <li><strong>Prophet:</strong> Additive model by Facebook</li>
+        <li><strong>LSTM Networks:</strong> Deep learning for complex patterns</li>
+        <li><strong>SARIMA:</strong> Seasonal ARIMA</li>
+      </ul>
+
+      <h2>Using ML.NET for Forecasting</h2>
+      <p>
+        ML.NET provides the Forecasting API (preview) for time series tasks. It handles the complexity of model selection and parameter tuning automatically.
+      </p>
+
+      <h2>Data Preparation</h2>
+      <p>
+        Time series forecasting requires careful data preparation:
+      </p>
+      <ul>
+        <li>Handle missing values appropriately</li>
+        <li>Deal with outliers</li>
+        <li>Ensure consistent time intervals</li>
+        <li>Create features from temporal data</li>
+        <li>Normalize or scale data as needed</li>
+      </ul>
+
+      <h2>Feature Engineering</h2>
+      <p>
+        Extract meaningful features from time series:
+      </p>
+      <ul>
+        <li>Lagged features (previous values)</li>
+        <li>Rolling statistics (mean, std dev)</li>
+        <li>Trend components</li>
+        <li>Seasonal indicators</li>
+        <li>External variables</li>
+      </ul>
+
+      <h2>Model Evaluation</h2>
+      <p>
+        Time series require special evaluation metrics:
+      </p>
+      <ul>
+        <li><strong>RMSE:</strong> Root Mean Squared Error</li>
+        <li><strong>MAE:</strong> Mean Absolute Error</li>
+        <li><strong>MAPE:</strong> Mean Absolute Percentage Error</li>
+        <li><strong>Directional Accuracy:</strong> Correctly predicted direction</li>
+      </ul>
+
+      <h2>Real-World Applications</h2>
+      <ul>
+        <li>Stock price prediction</li>
+        <li>Demand forecasting for inventory</li>
+        <li>Weather prediction</li>
+        <li>Energy consumption forecasting</li>
+        <li>Sales prediction</li>
+        <li>Traffic flow prediction</li>
+      </ul>
+
+      <h2>Conclusion</h2>
+      <p>
+        Time series forecasting with ML.NET enables accurate predictions for temporal data. By understanding patterns and applying appropriate algorithms, you can build models that provide valuable insights for business planning and decision-making.
+      </p>
+    </div>
+
+    <div class="blog-post-footer">
+      <a href="../blogs/blog.html" class="back-link">Back to Blog</a>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer>
+    <div class="footer-content">
+      <div class="footer-section">
+        <h3>About</h3>
+        <p>Full Stack Developer with 11+ years of experience in building scalable applications.</p>
+      </div>
+      <div class="footer-section">
+        <h3>Quick Links</h3>
+        <a href="../index.html#home">Home</a>
+        <a href="../index.html#about">About</a>
+        <a href="../index.html#skills">Skills</a>
+        <a href="../blogs/blog.html">Blog</a>
+        <a href="../index.html#contact">Contact</a>
+      </div>
+      <div class="footer-section">
+        <h3>Follow Me</h3>
+        <a href="https://www.linkedin.com/in/abhiraampadhi/">LinkedIn</a>
+        <a href="https://github.com/AbhiramPadhi">GitHub</a>
+        <a href="mailto:abhiraampadhi@outlook.com">Email</a>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>&copy; <span id="year">2025</span> Abhiram Padhi. All rights reserved.</p>
+    </div>
+  </footer>
+
+  <script src="../js/main.js"></script>
+</body>
+</html>

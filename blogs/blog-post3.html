@@ -1,92 +1,218 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
-    <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Understanding Dependency Injection in .NET</title>
-    <link rel="stylesheet" href="blog.css" />
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Angular Performance Optimization Tips - TechTalks Blog</title>
+  
+  <!-- Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-LHKH7YCJMB"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag() { dataLayer.push(arguments); }
+    gtag('js', new Date());
+    gtag('config', 'G-LHKH7YCJMB');
+  </script>
+  
+  <link rel="stylesheet" href="../css/main.css" />
+  <link rel="stylesheet" href="../css/blog.css" />
 </head>
-
 <body>
-    <!-- Blog Post -->
-    <section id="blog-post">
-        <div class="container">
-            <h1 class="title">Understanding Dependency Injection in .NET</h1>
-            <p class="blog-date">September 20, 2024</p>
+  <!-- Navigation -->
+  <nav>
+    <a href="../index.html" class="nav-brand">Abhiram Padhi</a>
+    <button class="hamburger-btn" id="hamburgerBtn" aria-label="Toggle navigation menu">
+      <span></span>
+      <span></span>
+      <span></span>
+    </button>
+    <ul class="nav-menu" id="navMenu">
+      <li><a href="../index.html#home">Home</a></li>
+      <li><a href="../index.html#about">About</a></li>
+      <li><a href="../index.html#skills">Skills</a></li>
+      <li><a href="../blogs/blog.html" class="active">Blog</a></li>
+      <li><a href="../index.html#contact">Contact</a></li>
+    </ul>
+  </nav>
 
-            <div class="blog-content">
-                <p>Dependency Injection (DI) is a fundamental concept in software development that promotes loose
-                    coupling between components, enhances testability, and simplifies code management. In .NET, DI is a
-                    core feature of the framework, especially in ASP.NET Core applications. This article explores the
-                    principles of Dependency Injection in .NET, its benefits, and practical examples of how to use it
-                    effectively.</p>
+  <!-- Blog Post -->
+  <section class="blog-post-container">
+    <div class="blog-post-header">
+      <h1 class="blog-post-title">Angular Performance Optimization Tips</h1>
+      <div class="blog-post-meta">
+        <span class="blog-post-meta-item">📅 March 15, 2024</span>
+        <span class="blog-post-meta-item">✍️ Abhiram Padhi</span>
+      </div>
+    </div>
 
-                <h2>What is Dependency Injection?</h2>
-                <p>Dependency Injection is a design pattern where an object receives other objects that it depends on,
-                    rather than creating them internally. This approach promotes the principle of Inversion of Control
-                    (IoC), allowing objects to be injected into classes rather than hard-coding dependencies.</p>
+    <div class="blog-post-content">
+      <p>
+        Angular is a powerful framework for building dynamic web applications, but performance optimization is crucial for delivering excellent user experiences. This comprehensive guide covers essential techniques for optimizing Angular applications, reducing bundle sizes, and improving load times.
+      </p>
 
-                <h2>Benefits of Dependency Injection</h2>
-                <ul>
-                    <li><strong>Loose Coupling:</strong> Reduces dependencies between classes, making them more modular
-                        and easier to maintain.</li>
-                    <li><strong>Enhanced Testability:</strong> Facilitates unit testing by allowing mock dependencies to
-                        be injected into classes.</li>
-                    <li><strong>Improved Code Management:</strong> Simplifies the management of object lifetimes and
-                        dependencies.</li>
-                </ul>
+      <h2>Why Performance Matters</h2>
+      <p>
+        Performance directly impacts user experience and business metrics. Slow applications lead to higher bounce rates, reduced engagement, and lower conversion rates. Users expect applications to load quickly and respond instantly to interactions. By prioritizing performance, you create better experiences and achieve better business outcomes.
+      </p>
 
-                <h2>Dependency Injection in .NET Core</h2>
-                <p>In .NET Core, DI is built into the framework, making it easy to configure and use. The following
-                    steps illustrate how to set up DI in an ASP.NET Core application:</p>
+      <h2>Bundle Size Optimization</h2>
+      <p>
+        Reducing bundle size is one of the most effective ways to improve application performance. Smaller bundles load faster and require less bandwidth.
+      </p>
 
-                <h3>Step 1: Configure Services</h3>
-                <pre><code>
-public class Startup
-{
-    public void ConfigureServices(IServiceCollection services)
-    {
-        services.AddControllers();
-        services.AddTransient<IService, ServiceImplementation>();
-    }
-}
-                </code></pre>
+      <h3>Lazy Loading Routes</h3>
+      <p>
+        Lazy loading routes is a fundamental technique for reducing initial bundle size. Load modules only when needed, not upfront. This dramatically reduces the initial load time and improves the perceived performance of your application.
+      </p>
 
-                <p>In the `ConfigureServices` method, you register services with the dependency injection container. You
-                    can specify the service lifetime as `Transient`, `Scoped`, or `Singleton` based on your needs.</p>
+      <h3>Tree Shaking</h3>
+      <p>
+        Ensure your build process includes tree shaking to remove unused code. Use ES modules for better tree shaking results, and avoid default exports when possible.
+      </p>
 
-                <h3>Step 2: Inject Dependencies into Controllers</h3>
-                <pre><code>
-public class MyController : ControllerBase
-{
-    private readonly IService _service;
+      <h3>Code Splitting</h3>
+      <p>
+        Split your code into logical chunks that can be loaded on demand. Angular CLI handles this automatically with lazy loading routes, but you can also implement manual code splitting for better control.
+      </p>
 
-    public MyController(IService service)
-    {
-        _service = service;
-    }
-}
-                </code></pre>
+      <h2>Change Detection Optimization</h2>
+      <p>
+        Change detection is one of the most common performance bottlenecks in Angular applications. Optimizing it can dramatically improve application performance.
+      </p>
 
-                <p>In your controller, you can inject dependencies through the constructor. This allows the controller
-                    to use the injected service without creating an instance of it directly.</p>
+      <h3>OnPush Change Detection Strategy</h3>
+      <p>
+        Use the OnPush change detection strategy for components that receive immutable inputs. This tells Angular to only check the component when its inputs change, not on every event.
+      </p>
 
-                <h2>Conclusion</h2>
-                <p>Dependency Injection is a powerful pattern that enhances the flexibility and maintainability of .NET
-                    applications. By leveraging DI in .NET Core, developers can build more modular, testable, and
-                    manageable codebases. Embracing DI principles is essential for modern .NET development and
-                    contributes to writing clean, scalable, and efficient code.</p>
-            </div>
-        </div>
-    </section>
+      <h3>Unsubscribe from Observables</h3>
+      <p>
+        Always unsubscribe from observables in the ngOnDestroy lifecycle hook to prevent memory leaks. Use the async pipe or RxJS operators like takeUntil to simplify subscription management.
+      </p>
 
-    <!-- Footer -->
-    <a href="blog.html" class="btn btn-color-1">Back to Blog</a>
+      <h2>Rendering Performance</h2>
+      <p>
+        Optimize how Angular renders components to the DOM for better visual performance.
+      </p>
 
-    <!-- JavaScript -->
-    <script src="script.js"></script>
+      <h3>Virtual Scrolling</h3>
+      <p>
+        For long lists, use virtual scrolling (CDK virtual scroll) to render only visible items. This dramatically reduces DOM size and improves performance with large datasets.
+      </p>
+
+      <h3>Image Optimization</h3>
+      <p>
+        Optimize images for web delivery. Use modern formats like WebP, implement lazy loading for images, and serve appropriately sized images for different devices.
+      </p>
+
+      <h2>Memory Management</h2>
+      <p>
+        Proper memory management prevents memory leaks and keeps applications running smoothly over time.
+      </p>
+
+      <h3>Unsubscribe Strategy</h3>
+      <p>
+        Implement a consistent strategy for unsubscribing from observables. Use the takeUntil operator with a subject that emits on component destroy.
+      </p>
+
+      <h2>Build and Deployment Optimization</h2>
+      <p>
+        The build and deployment process significantly impacts application performance.
+      </p>
+
+      <h3>Production Build</h3>
+      <p>
+        Always use production builds (ng build --prod). This enables minification, tree shaking, ahead-of-time compilation, and other optimizations.
+      </p>
+
+      <h3>Ahead-of-Time (AOT) Compilation</h3>
+      <p>
+        AOT compilation reduces bundle size and improves application startup performance. It's enabled by default in production builds.
+      </p>
+
+      <h2>Network Performance</h2>
+      <p>
+        Optimize network requests to improve data loading performance.
+      </p>
+
+      <h3>HTTP Caching</h3>
+      <p>
+        Implement request caching to avoid redundant API calls and improve perceived performance. Use HTTP interceptors for global caching strategies.
+      </p>
+
+      <h3>Data Compression</h3>
+      <p>
+        Enable gzip compression on your server to reduce data transfer size. Most modern servers support this automatically.
+      </p>
+
+      <h2>Monitoring and Analysis</h2>
+      <p>
+        Monitor your application's performance to identify bottlenecks and measure improvements.
+      </p>
+
+      <h3>Angular DevTools</h3>
+      <p>
+        Use Angular DevTools browser extension to profile change detection and identify performance issues.
+      </p>
+
+      <h3>Chrome DevTools</h3>
+      <p>
+        Use Chrome DevTools Performance tab to profile your application and identify slow functions.
+      </p>
+
+      <h2>Best Practices Checklist</h2>
+      <ul>
+        <li>Use OnPush change detection strategy</li>
+        <li>Implement lazy loading for routes</li>
+        <li>Optimize bundle size with tree shaking</li>
+        <li>Unsubscribe from observables properly</li>
+        <li>Use virtual scrolling for large lists</li>
+        <li>Optimize images and media</li>
+        <li>Implement HTTP request caching</li>
+        <li>Use production builds</li>
+        <li>Monitor performance metrics</li>
+        <li>Regular performance audits</li>
+      </ul>
+
+      <h2>Conclusion</h2>
+      <p>
+        Performance optimization is an ongoing process that requires continuous monitoring and improvement. By implementing these techniques, you can significantly improve your Angular application's performance. Start by measuring current performance using tools like Chrome DevTools and Lighthouse, identify bottlenecks, and apply the most impactful optimizations first. Remember that small improvements in multiple areas often have a bigger impact than major changes in a single area.
+      </p>
+    </div>
+
+    <div class="blog-post-footer">
+      <a href="../blogs/blog.html" class="back-link">Back to Blog</a>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer>
+    <div class="footer-content">
+      <div class="footer-section">
+        <h3>About</h3>
+        <p>Full Stack Developer with 11+ years of experience in building scalable applications.</p>
+      </div>
+      <div class="footer-section">
+        <h3>Quick Links</h3>
+        <a href="../index.html#home">Home</a>
+        <a href="../index.html#about">About</a>
+        <a href="../index.html#skills">Skills</a>
+        <a href="../blogs/blog.html">Blog</a>
+        <a href="../index.html#contact">Contact</a>
+      </div>
+      <div class="footer-section">
+        <h3>Follow Me</h3>
+        <a href="https://www.linkedin.com/in/abhiraampadhi/">LinkedIn</a>
+        <a href="https://github.com/AbhiramPadhi">GitHub</a>
+        <a href="mailto:abhiraampadhi@outlook.com">Email</a>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>&copy; <span id="year">2025</span> Abhiram Padhi. All rights reserved.</p>
+    </div>
+  </footer>
+
+  <script src="../js/main.js"></script>
 </body>
-
 </html>

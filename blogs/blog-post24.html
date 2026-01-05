@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>AI Model Deployment with .NET - TechTalks Blog</title>
+  
+  <!-- Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-LHKH7YCJMB"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag() { dataLayer.push(arguments); }
+    gtag('js', new Date());
+    gtag('config', 'G-LHKH7YCJMB');
+  </script>
+  
+  <link rel="stylesheet" href="../css/main.css" />
+  <link rel="stylesheet" href="../css/blog.css" />
+</head>
+<body>
+  <!-- Navigation -->
+  <nav>
+    <a href="../index.html" class="nav-brand">Abhiram Padhi</a>
+    <button class="hamburger-btn" id="hamburgerBtn" aria-label="Toggle navigation menu">
+      <span></span>
+      <span></span>
+      <span></span>
+    </button>
+    <ul class="nav-menu" id="navMenu">
+      <li><a href="../index.html#home">Home</a></li>
+      <li><a href="../index.html#about">About</a></li>
+      <li><a href="../index.html#skills">Skills</a></li>
+      <li><a href="../blogs/blog.html" class="active">Blog</a></li>
+      <li><a href="../index.html#contact">Contact</a></li>
+    </ul>
+  </nav>
+
+  <!-- Blog Post -->
+  <section class="blog-post-container">
+    <div class="blog-post-header">
+      <h1 class="blog-post-title">AI Model Deployment and Serving with .NET</h1>
+      <div class="blog-post-meta">
+        <span class="blog-post-meta-item">📅 February 8, 2025</span>
+        <span class="blog-post-meta-item">✍️ Abhiram Padhi</span>
+      </div>
+    </div>
+
+    <div class="blog-post-content">
+      <p>
+        Building an AI model is only half the journey. Deploying and serving models effectively in production is crucial for delivering value. .NET provides excellent tools and patterns for deploying AI models reliably and at scale.
+      </p>
+
+      <h2>Deployment Challenges</h2>
+      <ul>
+        <li>Model versioning and management</li>
+        <li>Performance optimization</li>
+        <li>Scalability and load handling</li>
+        <li>Monitoring and observability</li>
+        <li>A/B testing and canary deployments</li>
+        <li>Data drift and model degradation</li>
+      </ul>
+
+      <h2>Deployment Strategies</h2>
+      <ul>
+        <li><strong>Batch Deployment:</strong> Process data in batches</li>
+        <li><strong>Real-time API:</strong> REST or gRPC endpoints</li>
+        <li><strong>Stream Processing:</strong> Process continuous data</li>
+        <li><strong>Serverless:</strong> Azure Functions or AWS Lambda</li>
+        <li><strong>Edge Deployment:</strong> On-device inference</li>
+      </ul>
+
+      <h2>Serving Models with .NET</h2>
+      <p>
+        .NET offers multiple options for serving models:
+      </p>
+      <ul>
+        <li><strong>ASP.NET Core Web APIs:</strong> RESTful endpoints</li>
+        <li><strong>gRPC:</strong> High-performance RPC</li>
+        <li><strong>Azure Functions:</strong> Serverless compute</li>
+        <li><strong>Azure Container Instances:</strong> Containerized deployment</li>
+        <li><strong>Azure Machine Learning:</strong> Managed model serving</li>
+      </ul>
+
+      <h2>Building a Model Serving API</h2>
+      <p>
+        Create an ASP.NET Core API that exposes your ML.NET model:
+      </p>
+      <ul>
+        <li>Load the trained model</li>
+        <li>Create prediction endpoints</li>
+        <li>Implement request validation</li>
+        <li>Handle errors gracefully</li>
+        <li>Add logging and monitoring</li>
+      </ul>
+
+      <h2>Performance Optimization</h2>
+      <ul>
+        <li><strong>Model Quantization:</strong> Reduce model size</li>
+        <li><strong>Batch Processing:</strong> Process multiple requests</li>
+        <li><strong>Caching:</strong> Cache predictions for repeated inputs</li>
+        <li><strong>GPU Acceleration:</strong> Leverage GPUs for inference</li>
+        <li><strong>Model Pruning:</strong> Remove unnecessary parameters</li>
+      </ul>
+
+      <h2>Model Monitoring</h2>
+      <p>
+        Monitor deployed models for:
+      </p>
+      <ul>
+        <li>Prediction latency and throughput</li>
+        <li>Data drift and concept drift</li>
+        <li>Model accuracy degradation</li>
+        <li>Error rates and exceptions</li>
+        <li>Resource utilization</li>
+      </ul>
+
+      <h2>Continuous Integration/Deployment</h2>
+      <p>
+        Implement MLOps pipelines using:
+      </p>
+      <ul>
+        <li>Azure DevOps for CI/CD</li>
+        <li>GitHub Actions for automation</li>
+        <li>Docker for containerization</li>
+        <li>Kubernetes for orchestration</li>
+        <li>IaC tools like Terraform or ARM templates</li>
+      </ul>
+
+      <h2>Conclusion</h2>
+      <p>
+        Effective AI model deployment is essential for production machine learning systems. .NET provides comprehensive tools and frameworks for building, serving, and monitoring AI models in production environments.
+      </p>
+    </div>
+
+    <div class="blog-post-footer">
+      <a href="../blogs/blog.html" class="back-link">Back to Blog</a>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer>
+    <div class="footer-content">
+      <div class="footer-section">
+        <h3>About</h3>
+        <p>Full Stack Developer with 11+ years of experience in building scalable applications.</p>
+      </div>
+      <div class="footer-section">
+        <h3>Quick Links</h3>
+        <a href="../index.html#home">Home</a>
+        <a href="../index.html#about">About</a>
+        <a href="../index.html#skills">Skills</a>
+        <a href="../blogs/blog.html">Blog</a>
+        <a href="../index.html#contact">Contact</a>
+      </div>
+      <div class="footer-section">
+        <h3>Follow Me</h3>
+        <a href="https://www.linkedin.com/in/abhiraampadhi/">LinkedIn</a>
+        <a href="https://github.com/AbhiramPadhi">GitHub</a>
+        <a href="mailto:abhiraampadhi@outlook.com">Email</a>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>&copy; <span id="year">2025</span> Abhiram Padhi. All rights reserved.</p>
+    </div>
+  </footer>
+
+  <script src="../js/main.js"></script>
+</body>
+</html>

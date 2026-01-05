@@ -2,371 +2,286 @@
 <html lang="en">
 
 <head>
-  <!-- Google tag (gtag.js) -->
+  <!-- Meta Tags -->
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description"
+    content="Abhiram Padhi - Full Stack Developer with 11+ years of experience in Azure, .NET, and Angular." />
+  <meta name="keywords" content="Full Stack Developer, Azure, .NET Core, Angular, Web Development" />
+  <meta name="author" content="Abhiram Padhi" />
+
+  <!-- Google Analytics -->
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-LHKH7YCJMB"></script>
   <script>
     window.dataLayer = window.dataLayer || [];
     function gtag() { dataLayer.push(arguments); }
     gtag('js', new Date());
-
     gtag('config', 'G-LHKH7YCJMB');
   </script>
-  <meta charset="UTF-8" />
-  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Abhiram Padhi | Portfolio</title>
-  <link rel="stylesheet" href="style.css" />
-  <link rel="stylesheet" href="mediaqueries.css" />
 
-
+  <title>Abhiram Padhi | Full Stack Developer Portfolio</title>
+  <link rel="stylesheet" href="./css/main.css" />
 </head>
 
 <body>
-  <!-- Navigation for desktop -->
-  <nav id="desktop-nav">
-    <div class="logo">Abhiram Padhi</div>
-    <ul class="nav-links">
+  <!-- Navigation -->
+  <nav>
+    <a href="#home" class="nav-brand">Abhiram Padhi</a>
+    <button class="hamburger-btn" id="hamburgerBtn" aria-label="Toggle navigation menu">
+      <span></span>
+      <span></span>
+      <span></span>
+    </button>
+    <ul class="nav-menu" id="navMenu">
+      <li><a href="#home">Home</a></li>
       <li><a href="#about">About</a></li>
-      <li><a href="#skillset">Skillset</a></li>
-      <li><a href="./blogs/blog.html" target="_blank">Blog</a></li>
-      <li><a href="#" onclick="window.open('./resume.html'); toggleMenu();">Online CV</a></li>
+      <li><a href="#skills">Skills</a></li>
+      <li><a href="./resume.html">Resume</a></li>
+      <li><a href="#blog">Blog</a></li>
       <li><a href="#contact">Contact</a></li>
     </ul>
   </nav>
 
-  <!-- Navigation for mobile -->
-  <nav id="hamburger-nav">
-    <div class="logo">Abhiram Padhi</div>
-    <div class="hamburger-menu">
-      <div class="hamburger-icon" onclick="toggleMenu()">
-        <span></span>
-        <span></span>
-        <span></span>
-      </div>
-      <div class="menu-links">
-        <ul>
-          <li><a href="#about">About</a></li>
-          <li><a href="#skillset">Skillset</a></li>
-          <li><a href="./blogs/blog.html" target="_blank">Blog</a></li>
-          <li><a href="#" onclick="window.open('./resume.html'); toggleMenu();">Online CV</a></li>
-          <li><a href="#contact">Contact</a></li>
-        </ul>
-      </div>
-  </nav>
-
-  <!-- Profile Section -->
-  <section id="profile">
-    <div class="section__pic-container">
-      <img src="./assets/profile-pic.png" alt="Abhiram Padhi profile picture" />
-    </div>
-    <div class="section__text">
-      <p class="section__text__p1">Hello, I'm</p>
-      <h1 class="title">Abhiram Padhi</h1>
-      <p class="section__text__p2">Full-Stack Developer</p>
+  <!-- Hero Section -->
+  <section id="home" class="hero">
+    <div class="hero-content">
+      <h1>Hi, I'm Abhiram Padhi</h1>
+      <p class="hero-subtitle">Full-Stack Developer</p>
+      <p class="hero-description">
+        With 11+ years of experience, I craft scalable and high-performance applications using Azure, .NET Core, and
+        Angular.
+        I'm passionate about clean code, design patterns, and delivering exceptional user experiences.
+      </p>
       <div class="btn-container">
-        <button class="btn btn-color-2"
-          onclick="window.open('./assets/Full_Stack_Developer_Abhiram_Padhi.pdf')">Download CV</button>
-        <button class="btn btn-color-1" onclick="location.href='#contact'">Contact Info</button>
+        <a href="#contact" class="btn btn-primary">Get In Touch</a>
+        <a href="./assets/Full_Stack_Developer_Abhiram_Padhi.pdf" class="btn btn-secondary" download>Download CV</a>
       </div>
-      <div id="socials-container">
-        <img src="./assets/linkedin.png" alt="LinkedIn profile" class="icon"
-          onclick="location.href='https://www.linkedin.com/in/abhiraampadhi/'" />
-        <img src="./assets/github.png" alt="Github profile" class="icon"
-          onclick="location.href='https://github.com/AbhiramPadhi'" />
+      <div class="social-links">
+        <a href="https://www.linkedin.com/in/abhiraampadhi/" class="social-link" aria-label="LinkedIn">
+          <img src="./assets/linkedin.png" alt="LinkedIn" />
+        </a>
+        <a href="https://github.com/AbhiramPadhi" class="social-link" aria-label="GitHub">
+          <img src="./assets/github.png" alt="GitHub" />
+        </a>
+        <a href="mailto:abhiraampadhi@outlook.com" class="social-link" aria-label="Email">
+          <img src="./assets/email.png" alt="Email" />
+        </a>
       </div>
-
+    </div>
+    <div class="hero-image">
+      <img src="./assets/profile-pic.png" alt="Abhiram Padhi Profile Picture" />
     </div>
   </section>
 
   <!-- About Section -->
   <section id="about">
-    <p class="section__text__p1">Get To Know More</p>
-    <h1 class="title">About Me</h1>
-    <div class="section-container">
-      <div class="about-details-container">
-        <div class="text-container">
-          <p>
-            Hello! I’m Abhiram Padhi, a Full Stack Developer with over 11 years of experience in Azure, .NET Core, .NET
-            Framework, and Angular. I specialize in creating scalable, high-performance applications and excel in both
-            front-end and back-end development.
-          </p>
-          <p>
-            My expertise includes implementing design patterns, SOLID principles, and CI/CD pipelines. I’m skilled in
-            using Azure services and ensuring software quality through TDD and BDD. I’m committed to optimizing system
-            performance and security while staying updated with the latest industry trends.
-          </p>
-          <p>
-            I thrive in collaborative environments and am passionate about driving innovation through technology.
-          </p>
-        </div>
-      </div>
+    <div class="section-title">
+      <p class="section-subtitle">Get to know me</p>
+      <h2>About Me</h2>
     </div>
-    <img src="./assets/arrow.png" alt="Arrow icon" class="icon arrow" onclick="location.href='#experience'" />
+    <div class="card">
+      <p>
+        Hello! I'm Abhiram Padhi, a passionate Full Stack Developer with over 11 years of professional experience.
+        My expertise spans across backend technologies like .NET Core, .NET Framework, and cutting-edge front-end
+        frameworks like Angular.
+      </p>
+      <p>
+        I specialize in building scalable, high-performance applications that solve real-world problems. My approach
+        focuses on:
+      </p>
+      <ul class="skill-list">
+        <li class="skill-item">Implementing SOLID principles and design patterns</li>
+        <li class="skill-item">Architecting microservices and cloud-native applications</li>
+        <li class="skill-item">Establishing CI/CD pipelines for continuous deployment</li>
+        <li class="skill-item">Ensuring code quality through TDD and BDD practices</li>
+        <li class="skill-item">Optimizing performance and security</li>
+      </ul>
+      <p>
+        I thrive in collaborative environments where I can mentor junior developers, contribute to architectural
+        decisions,
+        and drive innovation through technology. I'm continuously learning and staying updated with industry trends.
+      </p>
+    </div>
   </section>
 
-  <!-- Skill set Section -->
-  <section id="skillset">
-    <p class="section__text__p1">Check My</p>
-    <h1 class="title">Skill set</h1>
-    <div class="experience-details-container">
-      <div class="about-containers">
+  <!-- Skills Section -->
+  <section id="skills">
+    <div class="section-title">
+      <p class="section-subtitle">What I work with</p>
+      <h2>Skills & Technologies</h2>
+    </div>
+    <div class="skills-grid">
+      <div class="card skill-category">
+        <h3>Backend Technologies</h3>
+        <ul class="skill-list">
+          <li class="skill-item">.NET Core & .NET Framework</li>
+          <li class="skill-item">ASP.NET MVC & Web API</li>
+          <li class="skill-item">Entity Framework & LINQ</li>
+          <li class="skill-item">MS SQL Server & Oracle</li>
+          <li class="skill-item">RESTful API Design</li>
+        </ul>
+      </div>
 
-        <!-- Core Technologies -->
-        <div class="details-container">
-          <h2 class="experience-sub-title">Core Technologies</h2>
-          <div class="article-container">
-            <article>
-              <img src="./assets/checkmark.png" alt="Experience icon" class="icon" />
-              <div>
-                <h3>.NET Core</h3>
-              </div>
-            </article>
-            <article>
-              <img src="./assets/checkmark.png" alt="Experience icon" class="icon" />
-              <div>
-                <h3>.NET Framework</h3>
-              </div>
-            </article>
-            <article>
-              <img src="./assets/checkmark.png" alt="Experience icon" class="icon" />
-              <div>
-                <h3>ASP.NET MVC, Web API</h3>
-              </div>
-            </article>
-            <article>
-              <img src="./assets/checkmark.png" alt="Experience icon" class="icon" />
-              <div>
-                <h3>ADO.NET, Entity Framework</h3>
-              </div>
-            </article>
-            <article>
-              <img src="./assets/checkmark.png" alt="Experience icon" class="icon" />
-              <div>
-                <h3>MS SQL Server, Oracle</h3>
-              </div>
-            </article>
-          </div>
-        </div>
+      <div class="card skill-category">
+        <h3>Frontend Technologies</h3>
+        <ul class="skill-list">
+          <li class="skill-item">HTML5 & CSS3</li>
+          <li class="skill-item">JavaScript & TypeScript</li>
+          <li class="skill-item">Angular & RxJS</li>
+          <li class="skill-item">Responsive Design</li>
+          <li class="skill-item">UI/UX Principles</li>
+        </ul>
+      </div>
 
-        <!-- Front-End Technologies -->
-        <div class="details-container">
-          <h2 class="experience-sub-title">Front-End Technologies</h2>
-          <div class="article-container">
-            <article>
-              <img src="./assets/checkmark.png" alt="Experience icon" class="icon" />
-              <div>
-                <h3>HTML</h3>
-              </div>
-            </article>
-            <article>
-              <img src="./assets/checkmark.png" alt="Experience icon" class="icon" />
-              <div>
-                <h3>CSS</h3>
-              </div>
-            </article>
-            <article>
-              <img src="./assets/checkmark.png" alt="Experience icon" class="icon" />
-              <div>
-                <h3>JavaScript</h3>
-              </div>
-            </article>
-            <article>
-              <img src="./assets/checkmark.png" alt="Experience icon" class="icon" />
-              <div>
-                <h3>TypeScript</h3>
-              </div>
-            </article>
-            <article>
-              <img src="./assets/checkmark.png" alt="Experience icon" class="icon" />
-              <div>
-                <h3>Angular</h3>
-              </div>
-            </article>
-          </div>
-        </div>
+      <div class="card skill-category">
+        <h3>Cloud & DevOps</h3>
+        <ul class="skill-list">
+          <li class="skill-item">Azure Services</li>
+          <li class="skill-item">Azure DevOps & CI/CD</li>
+          <li class="skill-item">GitHub Actions</li>
+          <li class="skill-item">Docker & Kubernetes (AKS)</li>
+          <li class="skill-item">Infrastructure as Code</li>
+        </ul>
+      </div>
 
-        <!-- Testing & DevOps -->
-        <div class="details-container">
-          <h2 class="experience-sub-title">Testing & DevOps</h2>
-          <div class="article-container">
-            <article>
-              <img src="./assets/checkmark.png" alt="Experience icon" class="icon" />
-              <div>
-                <h3>TDD, BDD</h3>
-              </div>
-            </article>
-            <article>
-              <img src="./assets/checkmark.png" alt="Experience icon" class="icon" />
-              <div>
-                <h3>nUnit, MSTest, xUnit, SpecFlow</h3>
-              </div>
-            </article>
-            <article>
-              <img src="./assets/checkmark.png" alt="Experience icon" class="icon" />
-              <div>
-                <h3>Playwright</h3>
-              </div>
-            </article>
-            <article>
-              <img src="./assets/checkmark.png" alt="Experience icon" class="icon" />
-              <div>
-                <h3>Azure DevOps, CI/CD</h3>
-              </div>
-            </article>
-            <article>
-              <img src="./assets/checkmark.png" alt="Experience icon" class="icon" />
-              <div>
-                <h3>Github Action</h3>
-              </div>
-            </article>
-            <article>
-              <img src="./assets/checkmark.png" alt="Experience icon" class="icon" />
-              <div>
-                <h3>TFS, GIT, Jenkins</h3>
-              </div>
-            </article>
+      <div class="card skill-category">
+        <h3>Testing & Quality</h3>
+        <ul class="skill-list">
+          <li class="skill-item">Unit Testing (nUnit, MSTest, xUnit)</li>
+          <li class="skill-item">BDD with SpecFlow</li>
+          <li class="skill-item">E2E Testing (Playwright)</li>
+          <li class="skill-item">Code Coverage & SonarQube</li>
+          <li class="skill-item">Performance Testing</li>
+        </ul>
+      </div>
 
-          </div>
-        </div>
+      <div class="card skill-category">
+        <h3>Tools & Concepts</h3>
+        <ul class="skill-list">
+          <li class="skill-item">Git & TFS</li>
+          <li class="skill-item">SOLID Principles</li>
+          <li class="skill-item">Design Patterns</li>
+          <li class="skill-item">Agile & Scrum</li>
+          <li class="skill-item">Problem Solving</li>
+        </ul>
+      </div>
 
-        <!-- Tools & Concepts -->
-        <div class="details-container">
-          <h2 class="experience-sub-title">Tools & Concepts</h2>
-          <div class="article-container">
-            <article>
-              <img src="./assets/checkmark.png" alt="Experience icon" class="icon" />
-              <div>
-                <h3>SonarQube, Dot Cover</h3>
-              </div>
-            </article>
-            <article>
-              <img src="./assets/checkmark.png" alt="Experience icon" class="icon" />
-              <div>
-                <h3>IIS, OWIN, Katana</h3>
-              </div>
-            </article>
-            <article>
-              <img src="./assets/checkmark.png" alt="Experience icon" class="icon" />
-              <div>
-                <h3>PowerShell, Bash, KQL</h3>
-              </div>
-            </article>
-            <article>
-              <img src="./assets/checkmark.png" alt="Experience icon" class="icon" />
-              <div>
-                <h3>ARM, Bicep</h3>
-              </div>
-            </article>
-          </div>
-        </div>
-
-        <!-- Azure Services -->
-        <div class="details-container">
-          <h2 class="experience-sub-title">Azure Services</h2>
-          <div class="article-container">
-            <article>
-              <img src="./assets/checkmark.png" alt="Experience icon" class="icon" />
-              <div>
-                <h3>Azure Functions</h3>
-              </div>
-            </article>
-            <article>
-              <img src="./assets/checkmark.png" alt="Experience icon" class="icon" />
-              <div>
-                <h3>Azure Logic Apps</h3>
-              </div>
-            </article>
-            <article>
-              <img src="./assets/checkmark.png" alt="Experience icon" class="icon" />
-              <div>
-                <h3>Azure API Management</h3>
-              </div>
-            </article>
-            <article>
-              <img src="./assets/checkmark.png" alt="Experience icon" class="icon" />
-              <div>
-                <h3>Azure Kubernetes Service (AKS)</h3>
-              </div>
-            </article>
-            <article>
-              <img src="./assets/checkmark.png" alt="Experience icon" class="icon" />
-              <div>
-                <h3>Azure Cosmos DB</h3>
-              </div>
-            </article>
-            <article>
-              <img src="./assets/checkmark.png" alt="Experience icon" class="icon" />
-              <div>
-                <h3>Azure Redis Cache</h3>
-              </div>
-            </article>
-            <article>
-              <img src="./assets/checkmark.png" alt="Experience icon" class="icon" />
-              <div>
-                <h3>Azure Blob Storage</h3>
-              </div>
-            </article>
-            <article>
-              <img src="./assets/checkmark.png" alt="Experience icon" class="icon" />
-              <div>
-                <h3>Azure SQL Database</h3>
-              </div>
-            </article>
-            <article>
-              <img src="./assets/checkmark.png" alt="Experience icon" class="icon" />
-              <div>
-                <h3>Azure Active Directory</h3>
-              </div>
-            </article>
-            <article>
-              <img src="./assets/checkmark.png" alt="Experience icon" class="icon" />
-              <div>
-                <h3>Azure Monitor</h3>
-              </div>
-            </article>
-          </div>
-        </div>
-
+      <div class="card skill-category">
+        <h3>Azure Services</h3>
+        <ul class="skill-list">
+          <li class="skill-item">App Service & Functions</li>
+          <li class="skill-item">SQL Database & Cosmos DB</li>
+          <li class="skill-item">Blob Storage & CDN</li>
+          <li class="skill-item">Logic Apps & API Management</li>
+          <li class="skill-item">Azure Monitor & Analytics</li>
+        </ul>
       </div>
     </div>
-    <img src="./assets/arrow.png" alt="Arrow icon" class="icon arrow" onclick="location.href='#contact'" />
   </section>
 
+  <!-- Resume Section -->
+  <section id="resume" style="background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); color: white; padding: 4rem 2rem;">
+    <div class="section-title">
+      <p class="section-subtitle" style="color: rgba(255,255,255,0.9);">Professional Experience</p>
+      <h2 style="color: white;">My Resume & CV</h2>
+    </div>
+    <div class="card" style="background: rgba(255,255,255,0.95); color: #333; max-width: 800px; margin: 0 auto;">
+      <p style="margin-bottom: 2rem; font-size: 1.1rem;">
+        11+ years of professional experience in full-stack development with expertise in .NET Core, Azure cloud services, 
+        and modern web technologies. Proven track record of architecting scalable solutions, leading cloud migrations, 
+        and mentoring development teams.
+      </p>
+      <div style="display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap;">
+        <a href="./resume.html" class="btn btn-primary">View Full Resume</a>
+        <a href="./assets/Full_Stack_Developer_Abhiram_Padhi.pdf" class="btn btn-secondary" download>Download PDF</a>
+      </div>
+    </div>
+  </section>
 
-  <!-- CONTACT SECTION -->
+  <!-- Blog Section -->
+  <section id="blog">
+    <div class="section-title">
+      <p class="section-subtitle">Latest updates</p>
+      <h2>Blog</h2>
+    </div>
+    <p style="text-align: center; margin-bottom: 2rem;">
+      Check out my latest articles on technology, best practices, and insights in full-stack development.
+    </p>
+    <div style="text-align: center;">
+      <a href="./blogs/blog.html" class="btn btn-primary">Explore All Articles</a>
+    </div>
+  </section>
+
+  <!-- Contact Section -->
   <section id="contact">
-    <p class="section__text__p1">Get in Touch</p>
-    <h1 class="title">Contact Me</h1>
-    <div class="contact-info-container">
-      <div class="contact-info-item">
-        <img src="./assets/email.png" alt="Email icon" class="icon" />
-        <p><a href="mailto:abhiraampadhi@outlook.com">abhiraampadhi@outlook.com</a></p>
+    <div class="section-title">
+      <p class="section-subtitle">Let's connect</p>
+      <h2>Get In Touch</h2>
+    </div>
+    <div class="card" style="max-width: 600px; margin: 0 auto;">
+      <p style="text-align: center; margin-bottom: 2rem;">
+        I'd love to hear about your projects and ideas. Whether you have a question or a proposal,
+        feel free to reach out!
+      </p>
+      <div style="display: grid; gap: 1.5rem; margin-bottom: 2rem;">
+        <div style="display: flex; align-items: center; gap: 1rem;">
+          <img src="./assets/email.png" alt="" style="width: 30px; height: 30px;" />
+          <div>
+            <strong>Email</strong><br>
+            <a href="mailto:abhiraampadhi@outlook.com">abhiraampadhi@outlook.com</a>
+          </div>
+        </div>
+        <div style="display: flex; align-items: center; gap: 1rem;">
+          <img src="./assets/linkedin.png" alt="" style="width: 30px; height: 30px;" />
+          <div>
+            <strong>LinkedIn</strong><br>
+            <a href="https://www.linkedin.com/in/abhiraampadhi/" target="_blank">Connect with me</a>
+          </div>
+        </div>
+        <div style="display: flex; align-items: center; gap: 1rem;">
+          <img src="./assets/github.png" alt="" style="width: 30px; height: 30px;" />
+          <div>
+            <strong>GitHub</strong><br>
+            <a href="https://github.com/AbhiramPadhi" target="_blank">View my work</a>
+          </div>
+        </div>
       </div>
-      <div class="contact-info-item">
-        <img src="./assets/linkedin.png" alt="LinkedIn icon" class="icon" />
-        <p><a href="https://www.linkedin.com/in/abhiraampadhi/">LinkedIn</a></p>
-      </div>
-      <div class="contact-info-item">
-        <img src="./assets/github.png" alt="GitHub icon" class="icon" />
-        <p><a href="https://github.com/AbhiramPadhi">GitHub</a></p>
+      <div style="text-align: center;">
+        <a href="mailto:abhiraampadhi@outlook.com" class="btn btn-primary">Send Me an Email</a>
       </div>
     </div>
   </section>
+
   <!-- Footer -->
   <footer>
-    <nav>
-      <ul class="nav-links">
-        <li><a href="#about">About</a></li>
-        <li><a href="#skillset">Skillset</a></li>
-        <li><a href="./blogs/blog.html" target="_blank">Blog</a></li>
-        <li><a href="#contact">Contact</a></li>
-      </ul>
-    </nav>
-    <p>Copyright &copy; 2026 Abhiram Padhi. All Rights Reserved.</p>
+    <div class="footer-content">
+      <div class="footer-section">
+        <h3>About</h3>
+        <p>Full Stack Developer with 11+ years of experience in building scalable applications.</p>
+      </div>
+      <div class="footer-section">
+        <h3>Quick Links</h3>
+        <a href="#home">Home</a>
+        <a href="#about">About</a>
+        <a href="#skills">Skills</a>
+        <a href="#blog">Blog</a>
+        <a href="#contact">Contact</a>
+      </div>
+      <div class="footer-section">
+        <h3>Follow Me</h3>
+        <a href="https://www.linkedin.com/in/abhiraampadhi/">LinkedIn</a>
+        <a href="https://github.com/AbhiramPadhi">GitHub</a>
+        <a href="mailto:abhiraampadhi@outlook.com">Email</a>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>&copy; <span id="year">2024</span> Abhiram Padhi. All rights reserved.</p>
+    </div>
   </footer>
 
-  <!-- JavaScript -->
-  <script src="script.js"></script>
+  <!-- Scripts -->
+  <script src="./js/main.js"></script>
 </body>
 
 </html>

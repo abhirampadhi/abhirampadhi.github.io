@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Anomaly Detection in .NET - TechTalks Blog</title>
+  
+  <!-- Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-LHKH7YCJMB"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag() { dataLayer.push(arguments); }
+    gtag('js', new Date());
+    gtag('config', 'G-LHKH7YCJMB');
+  </script>
+  
+  <link rel="stylesheet" href="../css/main.css" />
+  <link rel="stylesheet" href="../css/blog.css" />
+</head>
+<body>
+  <!-- Navigation -->
+  <nav>
+    <a href="../index.html" class="nav-brand">Abhiram Padhi</a>
+    <button class="hamburger-btn" id="hamburgerBtn" aria-label="Toggle navigation menu">
+      <span></span>
+      <span></span>
+      <span></span>
+    </button>
+    <ul class="nav-menu" id="navMenu">
+      <li><a href="../index.html#home">Home</a></li>
+      <li><a href="../index.html#about">About</a></li>
+      <li><a href="../index.html#skills">Skills</a></li>
+      <li><a href="../blogs/blog.html" class="active">Blog</a></li>
+      <li><a href="../index.html#contact">Contact</a></li>
+    </ul>
+  </nav>
+
+  <!-- Blog Post -->
+  <section class="blog-post-container">
+    <div class="blog-post-header">
+      <h1 class="blog-post-title">Anomaly Detection in .NET Applications</h1>
+      <div class="blog-post-meta">
+        <span class="blog-post-meta-item">📅 February 5, 2025</span>
+        <span class="blog-post-meta-item">✍️ Abhiram Padhi</span>
+      </div>
+    </div>
+
+    <div class="blog-post-content">
+      <p>
+        Anomaly detection identifies unusual patterns in data that deviate significantly from normal behavior. It's crucial for fraud detection, system monitoring, quality control, and cybersecurity. ML.NET provides robust tools for building anomaly detection models.
+      </p>
+
+      <h2>What are Anomalies?</h2>
+      <p>
+        Anomalies are data points or patterns that differ significantly from the expected behavior. They can indicate fraud, equipment failures, network intrusions, or other critical events requiring attention.
+      </p>
+
+      <h2>Types of Anomalies</h2>
+      <ul>
+        <li><strong>Point Anomalies:</strong> Single data points that are unusual</li>
+        <li><strong>Contextual Anomalies:</strong> Unusual in specific context</li>
+        <li><strong>Collective Anomalies:</strong> Collection of related points that are unusual</li>
+      </ul>
+
+      <h2>Anomaly Detection Algorithms</h2>
+      <ul>
+        <li><strong>Isolation Forest:</strong> Isolates anomalies</li>
+        <li><strong>One-Class SVM:</strong> Learns the normal region</li>
+        <li><strong>Local Outlier Factor (LOF):</strong> Density-based detection</li>
+        <li><strong>Autoencoders:</strong> Deep learning approach</li>
+        <li><strong>Statistical Methods:</strong> Z-score, IQR-based</li>
+      </ul>
+
+      <h2>ML.NET Anomaly Detection</h2>
+      <p>
+        ML.NET provides anomaly detection capabilities through its Forecasting API. It includes spike detection for time series data, which is particularly useful for monitoring systems.
+      </p>
+
+      <h2>Common Use Cases</h2>
+      <ul>
+        <li><strong>Fraud Detection:</strong> Identify fraudulent transactions</li>
+        <li><strong>Network Security:</strong> Detect intrusions and attacks</li>
+        <li><strong>Equipment Monitoring:</strong> Detect equipment failures</li>
+        <li><strong>Quality Control:</strong> Identify defective products</li>
+        <li><strong>Sensor Monitoring:</strong> Detect sensor malfunctions</li>
+        <li><strong>Log Analysis:</strong> Find suspicious patterns</li>
+      </ul>
+
+      <h2>Building an Anomaly Detection System</h2>
+      <p>
+        Steps to build an effective system:
+      </p>
+      <ul>
+        <li>Collect normal behavior data</li>
+        <li>Preprocess and feature engineer</li>
+        <li>Train on normal data</li>
+        <li>Define anomaly thresholds</li>
+        <li>Test with known anomalies</li>
+        <li>Implement alerting mechanisms</li>
+      </ul>
+
+      <h2>Challenges and Solutions</h2>
+      <ul>
+        <li><strong>Imbalanced Data:</strong> Use sampling or weighting techniques</li>
+        <li><strong>Concept Drift:</strong> Implement model retraining</li>
+        <li><strong>False Positives:</strong> Tune thresholds carefully</li>
+        <li><strong>Missing Anomalies:</strong> Combine multiple algorithms</li>
+      </ul>
+
+      <h2>Real-Time Monitoring</h2>
+      <p>
+        Implement real-time anomaly detection by:
+      </p>
+      <ul>
+        <li>Using streaming data pipelines</li>
+        <li>Deploying models as microservices</li>
+        <li>Setting up alerting systems</li>
+        <li>Logging all detections for analysis</li>
+      </ul>
+
+      <h2>Conclusion</h2>
+      <p>
+        Anomaly detection with .NET is essential for building secure, reliable systems. With ML.NET and proper implementation, you can detect unusual patterns early and take preventive action before problems escalate.
+      </p>
+    </div>
+
+    <div class="blog-post-footer">
+      <a href="../blogs/blog.html" class="back-link">Back to Blog</a>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer>
+    <div class="footer-content">
+      <div class="footer-section">
+        <h3>About</h3>
+        <p>Full Stack Developer with 11+ years of experience in building scalable applications.</p>
+      </div>
+      <div class="footer-section">
+        <h3>Quick Links</h3>
+        <a href="../index.html#home">Home</a>
+        <a href="../index.html#about">About</a>
+        <a href="../index.html#skills">Skills</a>
+        <a href="../blogs/blog.html">Blog</a>
+        <a href="../index.html#contact">Contact</a>
+      </div>
+      <div class="footer-section">
+        <h3>Follow Me</h3>
+        <a href="https://www.linkedin.com/in/abhiraampadhi/">LinkedIn</a>
+        <a href="https://github.com/AbhiramPadhi">GitHub</a>
+        <a href="mailto:abhiraampadhi@outlook.com">Email</a>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>&copy; <span id="year">2025</span> Abhiram Padhi. All rights reserved.</p>
+    </div>
+  </footer>
+
+  <script src="../js/main.js"></script>
+</body>
+</html>

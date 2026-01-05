@@ -1,82 +1,171 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
   <meta charset="UTF-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>SOLID Principles - TechTalks Blog</title>
-  <link rel="stylesheet" href="blog.css" />
+  <title>Mastering TypeScript: A Comprehensive Guide - TechTalks Blog</title>
+  
+  <!-- Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-LHKH7YCJMB"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag() { dataLayer.push(arguments); }
+    gtag('js', new Date());
+    gtag('config', 'G-LHKH7YCJMB');
+  </script>
+  
+  <link rel="stylesheet" href="../css/main.css" />
+  <link rel="stylesheet" href="../css/blog.css" />
 </head>
 <body>
   <!-- Navigation -->
   <nav>
-    <a href="index.html" class="logo">Abhiram Padhi</a>
+    <a href="../index.html" class="nav-brand">Abhiram Padhi</a>
+    <button class="hamburger-btn" id="hamburgerBtn" aria-label="Toggle navigation menu">
+      <span></span>
+      <span></span>
+      <span></span>
+    </button>
+    <ul class="nav-menu" id="navMenu">
+      <li><a href="../index.html#home">Home</a></li>
+      <li><a href="../index.html#about">About</a></li>
+      <li><a href="../index.html#skills">Skills</a></li>
+      <li><a href="../blogs/blog.html" class="active">Blog</a></li>
+      <li><a href="../index.html#contact">Contact</a></li>
+    </ul>
   </nav>
 
   <!-- Blog Post -->
-  <section id="blog-post">
-    <div class="container">
-      <div class="blog-post-header">
-        <h1 class="blog-post-title">Understanding SOLID Principles</h1>
-        <div class="blog-post-meta">
-          <span class="blog-post-date">September 14, 2024</span>
-          <span class="blog-post-author">Abhiram Padhi</span>
-        </div>
-      </div>
-
-      <div class="blog-content">
-        <p class="blog-summary">
-          SOLID is a set of five design principles that help developers create more maintainable and understandable
-          software. These principles are particularly useful for object-oriented programming and can lead to better
-          software design and more robust applications.
-        </p>
-
-        <h2>1. Single Responsibility Principle (SRP)</h2>
-        <p>
-          The Single Responsibility Principle states that a class should have only one reason to change, meaning it
-          should have only one job or responsibility. This principle helps in reducing the complexity of a class and
-          makes it easier to manage and understand.
-        </p>
-
-        <h2>2. Open/Closed Principle (OCP)</h2>
-        <p>
-          The Open/Closed Principle suggests that software entities (classes, modules, functions, etc.) should be open
-          for extension but closed for modification. This means that you should be able to add new functionality to a
-          class without changing its existing code, thereby reducing the risk of introducing bugs.
-        </p>
-
-        <h2>3. Liskov Substitution Principle (LSP)</h2>
-        <p>
-          The Liskov Substitution Principle states that objects of a superclass should be replaceable with objects of a
-          subclass without affecting the correctness of the program. This ensures that a subclass can be used
-          interchangeably with its superclass without unexpected behavior.
-        </p>
-
-        <h2>4. Interface Segregation Principle (ISP)</h2>
-        <p>
-          The Interface Segregation Principle suggests that a client should not be forced to depend on interfaces it
-          does not use. Instead of having one large interface with many methods, it is better to have several smaller,
-          more specific interfaces.
-        </p>
-
-        <h2>5. Dependency Inversion Principle (DIP)</h2>
-        <p>
-          The Dependency Inversion Principle states that high-level modules should not depend on low-level modules. Both
-          should depend on abstractions. Additionally, abstractions should not depend on details, but details should
-          depend on abstractions. This principle helps in reducing the coupling between different parts of the system.
-        </p>
-
-        <p class="blog-summary">
-          Applying these SOLID principles helps in creating a well-structured codebase that is easier to maintain,
-          extend, and understand. By following these principles, developers can avoid common pitfalls and produce
-          software that is more robust and adaptable to changes.
-        </p>
-
-        <a href="blog.html" class="back-btn">Back to Blog</a>
+  <section class="blog-post-container">
+    <div class="blog-post-header">
+      <h1 class="blog-post-title">Mastering TypeScript: A Comprehensive Guide</h1>
+      <div class="blog-post-meta">
+        <span class="blog-post-meta-item">📅 January 30, 2024</span>
+        <span class="blog-post-meta-item">✍️ Abhiram Padhi</span>
       </div>
     </div>
-  </section>
-</body>
 
+    <div class="blog-post-content">
+      <p>
+        TypeScript has revolutionized JavaScript development by adding static typing to the language. Whether you're building small scripts or large-scale enterprise applications, understanding TypeScript can significantly improve your code quality, developer experience, and productivity. This comprehensive guide will take you from TypeScript fundamentals to advanced patterns and best practices.
+      </p>
+
+      <h2>What is TypeScript and Why Should You Learn It?</h2>
+      <p>
+        TypeScript is a superset of JavaScript that adds static type checking, interfaces, generics, and advanced tooling support. At its core, TypeScript helps you catch errors early, provide better IDE support, and write more maintainable code. With the rise of large-scale JavaScript applications, TypeScript has become the go-to choice for developers who value code quality and scalability.
+      </p>
+      <p>
+        The key benefits of TypeScript include:
+      </p>
+      <ul>
+        <li><strong>Static Type Checking:</strong> Catch errors at compile time rather than runtime</li>
+        <li><strong>Enhanced IDE Support:</strong> Better autocomplete, refactoring, and code navigation</li>
+        <li><strong>Improved Code Maintainability:</strong> Types serve as inline documentation</li>
+        <li><strong>Reduced Bugs:</strong> Many common JavaScript pitfalls are prevented by the type system</li>
+        <li><strong>Better Scalability:</strong> Easier to manage large codebases</li>
+        <li><strong>Strong Community:</strong> Widely adopted by major frameworks like Angular, React, and Vue</li>
+      </ul>
+
+      <h2>TypeScript Fundamentals</h2>
+      <p>
+        Understanding the basics of TypeScript is essential for building a strong foundation. Let's explore the core concepts that make TypeScript powerful.
+      </p>
+
+      <h3>Basic Types</h3>
+      <p>
+        TypeScript supports all the basic JavaScript types plus additional type features. Understanding these primitive types is the foundation for all TypeScript development. Primitives include numbers, strings, booleans, and special types like null and undefined. TypeScript also introduces type unions, allowing variables to be one of several types, and literal types for more precise type definitions.
+      </p>
+
+      <h3>Interfaces and Types</h3>
+      <p>
+        Interfaces and type aliases are fundamental to TypeScript's type system. They allow you to define contracts for objects, ensuring that they have specific properties and methods. Interfaces excel at defining object shapes and can be extended through inheritance. Type aliases, while similar, offer more flexibility for union types and tuples, making them ideal for more complex scenarios.
+      </p>
+
+      <h2>Advanced TypeScript Concepts</h2>
+      <p>
+        Once you master the basics, TypeScript offers advanced features that enable sophisticated patterns and designs.
+      </p>
+
+      <h3>Generics</h3>
+      <p>
+        Generics are one of TypeScript's most powerful features. They allow you to write reusable code that works with any type while maintaining type safety. Generics are used extensively in libraries and frameworks to provide flexible, type-safe APIs. They enable you to create functions, classes, and interfaces that work with multiple types without sacrificing type safety.
+      </p>
+
+      <h3>Decorators</h3>
+      <p>
+        Decorators are a TypeScript feature (still experimental in JavaScript) that allow you to annotate and modify classes, methods, and properties. They're widely used in frameworks like Angular for dependency injection and metadata management. Decorators provide a powerful mechanism for extending functionality and implementing cross-cutting concerns.
+      </p>
+
+      <h3>Utility Types</h3>
+      <p>
+        TypeScript provides built-in utility types that help you manipulate and transform types. These utilities enable powerful type transformations without duplicating code. Common examples include Partial for optional properties, Pick for selecting subsets, Omit for excluding properties, Record for creating mapped types, and ReturnType for extracting function return types.
+      </p>
+
+      <h2>Best Practices for TypeScript Development</h2>
+      <p>
+        Following best practices will help you write cleaner, more maintainable TypeScript code that scales with your project.
+      </p>
+      <ul>
+        <li><strong>Use Strict Mode:</strong> Enable strict type checking to catch more errors</li>
+        <li><strong>Avoid Using Any:</strong> Be explicit with your types rather than falling back to any</li>
+        <li><strong>Use Readonly Where Appropriate:</strong> Prevent accidental mutations and improve type safety</li>
+        <li><strong>Leverage Union Types:</strong> Use discriminated unions for complex type relationships</li>
+        <li><strong>Create Reusable Type Utilities:</strong> Extract common type patterns into reusable utilities</li>
+        <li><strong>Document Complex Types:</strong> Use comments to explain non-obvious type relationships</li>
+        <li><strong>Use ESLint with TypeScript Support:</strong> Enforce consistent code style and catch potential errors</li>
+      </ul>
+
+      <h2>TypeScript in Modern Development</h2>
+      <p>
+        TypeScript is increasingly becoming the standard for professional JavaScript development. It's used by major frameworks and libraries, making it an essential skill for modern developers.
+      </p>
+      <ul>
+        <li><strong>Angular:</strong> Built entirely with TypeScript</li>
+        <li><strong>React:</strong> Increasingly popular with TypeScript through TSX files</li>
+        <li><strong>Vue:</strong> Excellent TypeScript support with Vue 3</li>
+        <li><strong>Node.js:</strong> TypeScript for backend development</li>
+        <li><strong>NestJS:</strong> A TypeScript framework for building scalable backend applications</li>
+      </ul>
+
+      <h2>Conclusion</h2>
+      <p>
+        TypeScript is a powerful tool that makes JavaScript development more robust and maintainable. By mastering its type system, advanced features, and best practices, you can write code that's not only correct but also easier to understand and maintain. Start with the basics, practice regularly, and gradually incorporate more advanced TypeScript features into your workflow. The investment in learning TypeScript will pay dividends in code quality and developer productivity.
+      </p>
+    </div>
+
+    <div class="blog-post-footer">
+      <a href="../blogs/blog.html" class="back-link">Back to Blog</a>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer>
+    <div class="footer-content">
+      <div class="footer-section">
+        <h3>About</h3>
+        <p>Full Stack Developer with 11+ years of experience in building scalable applications.</p>
+      </div>
+      <div class="footer-section">
+        <h3>Quick Links</h3>
+        <a href="../index.html#home">Home</a>
+        <a href="../index.html#about">About</a>
+        <a href="../index.html#skills">Skills</a>
+        <a href="../blogs/blog.html">Blog</a>
+        <a href="../index.html#contact">Contact</a>
+      </div>
+      <div class="footer-section">
+        <h3>Follow Me</h3>
+        <a href="https://www.linkedin.com/in/abhiraampadhi/">LinkedIn</a>
+        <a href="https://github.com/AbhiramPadhi">GitHub</a>
+        <a href="mailto:abhiraampadhi@outlook.com">Email</a>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>&copy; <span id="year">2025</span> Abhiram Padhi. All rights reserved.</p>
+    </div>
+  </footer>
+
+  <script src="../js/main.js"></script>
+</body>
 </html>

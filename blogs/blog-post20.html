@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Azure Cognitive Services with .NET - TechTalks Blog</title>
+  
+  <!-- Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-LHKH7YCJMB"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag() { dataLayer.push(arguments); }
+    gtag('js', new Date());
+    gtag('config', 'G-LHKH7YCJMB');
+  </script>
+  
+  <link rel="stylesheet" href="../css/main.css" />
+  <link rel="stylesheet" href="../css/blog.css" />
+</head>
+<body>
+  <!-- Navigation -->
+  <nav>
+    <a href="../index.html" class="nav-brand">Abhiram Padhi</a>
+    <button class="hamburger-btn" id="hamburgerBtn" aria-label="Toggle navigation menu">
+      <span></span>
+      <span></span>
+      <span></span>
+    </button>
+    <ul class="nav-menu" id="navMenu">
+      <li><a href="../index.html#home">Home</a></li>
+      <li><a href="../index.html#about">About</a></li>
+      <li><a href="../index.html#skills">Skills</a></li>
+      <li><a href="../blogs/blog.html" class="active">Blog</a></li>
+      <li><a href="../index.html#contact">Contact</a></li>
+    </ul>
+  </nav>
+
+  <!-- Blog Post -->
+  <section class="blog-post-container">
+    <div class="blog-post-header">
+      <h1 class="blog-post-title">Azure Cognitive Services with .NET</h1>
+      <div class="blog-post-meta">
+        <span class="blog-post-meta-item">📅 January 28, 2025</span>
+        <span class="blog-post-meta-item">✍️ Abhiram Padhi</span>
+      </div>
+    </div>
+
+    <div class="blog-post-content">
+      <p>
+        Azure Cognitive Services provides pre-built AI capabilities that can be easily integrated into .NET applications. These services handle complex AI tasks without requiring you to build and train models from scratch.
+      </p>
+
+      <h2>What are Azure Cognitive Services?</h2>
+      <p>
+        Azure Cognitive Services are cloud-based services offering pre-trained AI models for vision, speech, language, and decision-making tasks. They reduce development time and enable rapid AI implementation.
+      </p>
+
+      <h2>Available Services</h2>
+      <ul>
+        <li><strong>Computer Vision:</strong> Image analysis and processing</li>
+        <li><strong>Face API:</strong> Face detection and recognition</li>
+        <li><strong>Text Analytics:</strong> Sentiment analysis and entity recognition</li>
+        <li><strong>Language Understanding (LUIS):</strong> Intent recognition</li>
+        <li><strong>Speech Services:</strong> Speech-to-text and text-to-speech</li>
+        <li><strong>Translator:</strong> Multi-language translation</li>
+        <li><strong>Form Recognizer:</strong> Extract data from documents</li>
+      </ul>
+
+      <h2>Integration with .NET</h2>
+      <p>
+        Azure provides official SDKs for all cognitive services, making integration with .NET applications straightforward. Simply authenticate and call the APIs.
+      </p>
+
+      <h2>Building an Intelligent Application</h2>
+      <p>
+        Create an application that combines multiple cognitive services:
+      </p>
+      <ul>
+        <li>Extract text from images using Computer Vision</li>
+        <li>Analyze sentiment of extracted text</li>
+        <li>Translate text to multiple languages</li>
+        <li>Generate speech from the translated text</li>
+      </ul>
+
+      <h2>Authentication and Security</h2>
+      <p>
+        Azure Cognitive Services uses API keys and Azure AD for authentication. Implement proper security by:
+      </p>
+      <ul>
+        <li>Storing keys in secure vaults (Azure Key Vault)</li>
+        <li>Using Azure AD for managed identity</li>
+        <li>Implementing proper access controls</li>
+        <li>Monitoring API usage and billing</li>
+      </ul>
+
+      <h2>Pricing and Cost Optimization</h2>
+      <p>
+        Azure Cognitive Services operate on a pay-as-you-go model. Optimize costs by using free tiers for development, caching results, and choosing appropriate service tiers for your needs.
+      </p>
+
+      <h2>Real-World Use Cases</h2>
+      <ul>
+        <li>Customer support chatbots with natural language understanding</li>
+        <li>Document processing and data extraction</li>
+        <li>Multi-language customer service applications</li>
+        <li>Accessibility features for vision-impaired users</li>
+        <li>Content moderation for user-generated content</li>
+      </ul>
+
+      <h2>Conclusion</h2>
+      <p>
+        Azure Cognitive Services democratize AI by providing powerful, ready-to-use services. .NET developers can quickly integrate sophisticated AI capabilities without deep AI expertise, enabling rapid development of intelligent applications.
+      </p>
+    </div>
+
+    <div class="blog-post-footer">
+      <a href="../blogs/blog.html" class="back-link">Back to Blog</a>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer>
+    <div class="footer-content">
+      <div class="footer-section">
+        <h3>About</h3>
+        <p>Full Stack Developer with 11+ years of experience in building scalable applications.</p>
+      </div>
+      <div class="footer-section">
+        <h3>Quick Links</h3>
+        <a href="../index.html#home">Home</a>
+        <a href="../index.html#about">About</a>
+        <a href="../index.html#skills">Skills</a>
+        <a href="../blogs/blog.html">Blog</a>
+        <a href="../index.html#contact">Contact</a>
+      </div>
+      <div class="footer-section">
+        <h3>Follow Me</h3>
+        <a href="https://www.linkedin.com/in/abhiraampadhi/">LinkedIn</a>
+        <a href="https://github.com/AbhiramPadhi">GitHub</a>
+        <a href="mailto:abhiraampadhi@outlook.com">Email</a>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>&copy; <span id="year">2025</span> Abhiram Padhi. All rights reserved.</p>
+    </div>
+  </footer>
+
+  <script src="../js/main.js"></script>
+</body>
+</html>
